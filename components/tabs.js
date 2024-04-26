@@ -34,8 +34,9 @@ export default function Tabs() {
             </a>
           </li>
         </ul>
-
-        <Login />
+        <div>
+          <Login />
+        </div>
       </div>
     </aside>
   );
