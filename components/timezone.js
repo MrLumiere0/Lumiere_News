@@ -11,6 +11,41 @@ export default function TimeZone() {
   const url_Tokyo = "http://worldtimeapi.org/api/timezone/Asia/Tokyo";
 
   useEffect(() => {
+    const timezone_NY = async () => {
+      const response = await fetch(url_NY);
+      const data = await response.json();
+      var date = data.unixtime;
+      date = new Date(date * 1000);
+      date = date.toLocaleTimeString("en-US");
+      date = date.substr(0, 4) + date.substr(7, 9);
+      setNY(date);
+    };
+
+    const timezone_London = async () => {
+      const response = await fetch(url_London);
+      const data = await response.json();
+      var date = data.unixtime;
+      date = new Date(date * 1000);
+      date = date.toLocaleTimeString("en-US", { timeZone: "Europe/London" });
+      date = date.substr(0, 4) + date.substr(7, 9);
+      SetLondon(date);
+    };
+
+    const timezone_Tokyo = async () => {
+      const response = await fetch(url_Tokyo);
+      const data = await response.json();
+      var date = data.unixtime;
+      date = new Date(date * 1000);
+      date = date.toLocaleTimeString("en-US", { timeZone: "Asia/Tokyo" });
+      date = date.substr(0, 4) + date.substr(7, 9);
+      setTokyo(date);
+    };
+
+    timezone_NY();
+    timezone_London();
+    timezone_Tokyo();
+  }, []);
+  useEffect(() => {
     setInterval(() => {
       const timezone_NY = async () => {
         const response = await fetch(url_NY);
@@ -45,42 +80,6 @@ export default function TimeZone() {
       timezone_London();
       timezone_Tokyo();
     }, 60000);
-  }, []);
-
-  useEffect(() => {
-    const timezone_NY = async () => {
-      const response = await fetch(url_NY);
-      const data = await response.json();
-      var date = data.unixtime;
-      date = new Date(date * 1000);
-      date = date.toLocaleTimeString("en-US");
-      date = date.substr(0, 4) + date.substr(7, 9);
-      setNY(date);
-    };
-
-    const timezone_London = async () => {
-      const response = await fetch(url_London);
-      const data = await response.json();
-      var date = data.unixtime;
-      date = new Date(date * 1000);
-      date = date.toLocaleTimeString("en-US", { timeZone: "Europe/London" });
-      date = date.substr(0, 4) + date.substr(7, 9);
-      SetLondon(date);
-    };
-
-    const timezone_Tokyo = async () => {
-      const response = await fetch(url_Tokyo);
-      const data = await response.json();
-      var date = data.unixtime;
-      date = new Date(date * 1000);
-      date = date.toLocaleTimeString("en-US", { timeZone: "Asia/Tokyo" });
-      date = date.substr(0, 4) + date.substr(7, 9);
-      setTokyo(date);
-    };
-
-    timezone_NY();
-    timezone_London();
-    timezone_Tokyo();
   }, []);
 
   return (

@@ -11,8 +11,14 @@ import Login from "./login";
 export default function Tabs() {
   return (
     <aside className='sidebar '>
-      <div className='sidebar-logo'>
-        <h1> "Lumiere" </h1>
+      <div className='logo-video'>
+        <video
+          className='sidebar-logo'
+          src={require("../public/src/butterfly.mp4")}
+          autoPlay
+          loop
+          muted
+        />
       </div>
 
       <div className='sidebar-main'>
@@ -34,9 +40,8 @@ export default function Tabs() {
             </a>
           </li>
         </ul>
-        <div>
-          <Login />
-        </div>
+
+        <Login />
       </div>
     </aside>
   );

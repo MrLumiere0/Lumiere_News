@@ -6,15 +6,17 @@ export default function Home() {
     <main className='homepage'>
       <video
         className='lumiere-banner'
-        src={require("../public/src/butterfly.mp4")}
+        src={require("../public/src/wavey.mp4")}
         autoPlay
         loop
         muted
       />
       <div className='banner'>
-        <h2 id='Lumiere' className={bannerFont.className}>
-          Lumiere Trading
-        </h2>
+        <h2 id='Lumiere'>Lumiere Holdings</h2>
+
+        <h3 id='banner-subheading' className={bannerFont.className}>
+          Making trading (i)ntuitive
+        </h3>
       </div>
     </main>
   );

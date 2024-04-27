@@ -14,17 +14,21 @@
 .home-enter {
   display: flex;
   max-height: 100vh;
+  width: 100vw;
 }
 .side-banner {
-  width: 15%;
-  min-width: 215px;
+  max-width: 175px;
   height: 100vh;
+}
+
+.homepage {
+  position: relative;
+  height: 90vh;
 }
 
 .main-banner-homepage {
   width: 100%;
-  height: 100vh;
-  min-width: 1050px;
+  height: 100%;
 }
 
 .nav {
@@ -35,54 +39,102 @@
   grid-row-gap: 0px;
   box-shadow: 0px 6px 9px -1px rgba(0, 0, 0, 0.75);
   width: auto;
-  background: var(--homepage-main);
-  color: #fff;
-  height: 8vh;
+  background: black;
+
+  height: auto;
 }
 
 .time-nav {
   grid-column: 1;
   padding: 1rem 1rem;
+  height: 10vh;
+  color: white;
+  display: flex;
+  justify-content: center;
 }
 
+.timezone-main {
+  height: 100%;
+  min-width: 490px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 3rem;
+}
+
+.time-zones {
+  display: flex;
+  font-size: 0.7rem;
+}
+
+#NY-timezone {
+  margin-right: 1rem;
+}
+
+#NY-timezone-time {
+  color: var(--homepage-login);
+}
 .search-nav {
   grid-column: 3;
+  height: 10vh;
+  width: auto;
+  z-index: 1;
 }
 
-.search-grid {
-  background-color: var(--homepage-main);
-}
-
-.search-prompt {
+.main-search {
   height: 100%;
   width: 100%;
-  padding: 2rem;
-  background-color: var(--homepage-main);
-  color: #fff;
-  border-left: 0.5px var(--homepage-secondary) solid;
-  font-size: 1rem;
-  outline: none;
+  padding-right: 3rem;
+  font-size: 1.2rem;
+  text-align: right;
+  background-color: black;
+  border: none;
+}
+
+.main-search::placeholder {
+  color: white;
+}
+
+.main-search:focus {
+  background-color: white;
+  transition: ease-in 0.5s;
+  color: black;
+}
+
+.main-search:hover {
+  background-color: white;
+  transition: ease-in 0.5s;
+  color: black;
+}
+
+.main-search:hover::placeholder {
+  transition: ease-out 0.5s;
+  color: black;
 }
 
 .sidebar {
   width: 100%;
-  max-width: 275px;
-  min-width: 220px;
-  background-color: var(--homepage-main);
-  height: 100vh;
+  min-width: none;
+  background-color: black;
+  height: 100%;
   transition: all 0.7s ease-in;
   display: flex;
   flex-direction: column;
 }
 
-.sidebar-logo {
-  height: 8vh;
+.logo-video {
   width: 100%;
-  padding-top: 1rem;
+}
+.sidebar-logo {
+  width: 100%;
+  height: 100%;
+  background-color: black;
 }
 
 .sidebar-main {
   height: 100%;
+  padding-top: 3rem;
+  padding-bottom: 1rem;
 }
 
 .sidebar-item {
@@ -93,7 +145,7 @@
   text-align: center;
   margin-bottom: 1rem;
   font-size: 1rem;
-  background-color: var(--homepage-main);
+  background-color: black;
   width: 100%;
   height: 100%;
   margin: auto;
@@ -123,8 +175,6 @@
 
 .sidebar-icon {
   font-size: 1.5rem;
-  text-align: center;
-  margin-top: 70px;
 }
 
 .sb-login {
@@ -134,10 +184,11 @@
   align-items: flex-end;
 }
 #sidebar-login {
-  width: 100%;
+  width: 90%;
   height: 100%;
   display: flex;
   justify-content: center;
+  margin: auto;
 }
 
 #sidebar-login a:hover {
@@ -149,31 +200,17 @@
   list-style: none;
   width: 90%;
   height: 5rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   text-align: center;
   align-self: flex-end;
-  padding-top: 1rem;
-  margin-bottom: 2rem;
   font-size: 1.5rem;
   background-color: var(--homepage-login);
   border-radius: 15px;
+  padding-top: 1.5rem;
 }
 
 .sidebar-login-link {
   text-decoration: none;
   color: white;
-  border-radius: 15px;
-  width: 100%;
-  height: 2.5rem;
-}
-
-.homepage {
-  margin-bottom: 0px;
-  position: relative;
-  height: 92vh;
-  margin-bottom: -1px;
 }
 
 .lumiere-banner {
@@ -181,7 +218,6 @@
   object-position: center;
   width: 100%;
   height: 100%;
-  z-index: -2;
 }
 
 .banner {
@@ -200,6 +236,13 @@
   color: white;
   font-size: 7rem;
   font-weight: 450;
+}
+
+#banner-subheading {
+  color: white;
+  font-size: 2rem;
+  font-weight: 200;
+  margin-top: 3rem;
 }
 
 .footer {
@@ -264,22 +307,98 @@
   font-weight: 350;
 }
 
-.timezone-main {
+.Headlines {
+  position: relative;
+  height: 90vh;
+  background-color: var(--homepage-main);
+  overflow: hidden;
+}
+
+.headline-nav {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  grid-template-rows: 3vh;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  box-shadow: 0px 6px 9px -1px rgba(0, 0, 0, 0.75);
+  width: auto;
+  background: var(--homepage-main);
+  height: 3rem;
+  z-index: 100;
+}
+
+.headline-nav-search {
+  grid-column: 1;
+  /* padding: 0.5rem; */
+  height: 3rem;
+  z-index: 1;
+  color: black;
+  min-width: 250px;
+  position: sticky;
+  top: 0;
+}
+
+.headline-search-input {
+  height: 100%;
+  width: 100%;
+  padding-left: 1.5rem;
+  font-size: 1rem;
+  text-align: left;
+  background-color: var(--homepage-main);
+  border: none;
+  border-bottom: white 2px solid;
+}
+
+.headline-search-input::placeholder {
+  color: white;
+}
+
+.headline-search-input:focus {
+  background-color: white;
+  transition: ease-in 0.5s;
+  color: black;
+}
+
+.headline-search-input:hover {
+  background-color: white;
+  transition: ease-in 0.5s;
+  color: black;
+}
+
+.headline-search-input:hover::placeholder {
+  transition: ease-out 0.5s;
+  color: black;
+}
+
+.headline-nav-categories {
+  grid-column: 2 / 3;
+  height: auto;
+  width: 100%;
+}
+
+.categories-list {
+  color: white;
   display: flex;
   justify-content: space-between;
-  padding-top: 1rem;
-  padding-left: 3rem;
+  align-content: center;
+  text-align: center;
+  list-style: none;
+  padding-left: 2rem;
+  width: auto;
+  height: 100%;
 }
 
-.time-zones {
-  display: flex;
-  font-size: 0.7rem;
+.headline-category {
+  font-size: 1rem;
+  width: 100%;
+  height: auto;
+  margin: auto;
+  border-right: var(--homepage-secondary) 1px solid;
 }
 
-#NY-timezone {
-  margin-right: 1rem;
-}
-
-#NY-timezone-time {
-  color: var(--homepage-login);
+.News-Banners {
+  height: 100%;
+  width: auto;
+  overflow: scroll;
+  border: #0781fe 1px solid;
 }

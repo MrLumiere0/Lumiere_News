@@ -1,5 +1,4 @@
 import React from "react";
-import Search from "./search";
 import TimeZone from "./timezone";
 
 export default function Navigation() {
@@ -8,9 +7,8 @@ export default function Navigation() {
       <div className='time-nav'>
         <TimeZone />
       </div>
-
       <div className='search-nav'>
-        <Search />
+        <input type='text' placeholder='Search' className='main-search' />
       </div>
     </nav>
   );

@@ -1,7 +1,8 @@
 import Navigation from "../components/navigation";
 import Home from "../components/home";
 import Footer from "../components/footer";
-import Tabs from "@/components/Tabs.1";
+import Tabs from "../components/tabs";
+import HeadlineNews from "@/components/headlinenews";
 
 function HomePage(props) {
   return (
@@ -13,7 +14,8 @@ function HomePage(props) {
 
         <div className='main-banner-homepage'>
           <Navigation />
-          <Home />
+
+          <HeadlineNews />
         </div>
       </div>
 
