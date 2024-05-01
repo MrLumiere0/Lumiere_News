@@ -1,9 +1,12 @@
 :root {
   --homepage-main: #121212;
   --homepage-secondary: #717171;
-  --homepage-login: #0781fe;
+  --homepage-tertiary: #0781fe;
   --NavFontSize: 2rem;
   --NavFont: "Belleza", sans-serif;
+  --app-main: #181818;
+  --app-secondary: #121212;
+  --rem: 1.2rem;
 }
 * {
   padding: 0;
@@ -40,13 +43,13 @@
   box-shadow: 0px 6px 9px -1px rgba(0, 0, 0, 0.75);
   width: auto;
   background: black;
-
   height: auto;
+  font-size: 1rem;
 }
 
 .time-nav {
-  grid-column: 1;
-  padding: 1rem 1rem;
+  grid-column: 1 span 1;
+  padding: 1rem;
   height: 10vh;
   color: white;
   display: flex;
@@ -60,11 +63,12 @@
   justify-content: space-between;
   align-items: center;
   padding-left: 3rem;
+  font-size: 1rem;
 }
 
 .time-zones {
   display: flex;
-  font-size: 0.7rem;
+  font-size: 0.8rem;
 }
 
 #NY-timezone {
@@ -72,7 +76,7 @@
 }
 
 #NY-timezone-time {
-  color: var(--homepage-login);
+  color: var(--homepage-tertiary);
 }
 .search-nav {
   grid-column: 3;
@@ -92,7 +96,7 @@
 }
 
 .main-search::placeholder {
-  color: white;
+  color: var(--homepage-secondary);
 }
 
 .main-search:focus {
@@ -124,6 +128,7 @@
 
 .logo-video {
   width: 100%;
+  height: 10%;
 }
 .sidebar-logo {
   width: 100%;
@@ -132,8 +137,9 @@
 }
 
 .sidebar-main {
-  height: 100%;
-  padding-top: 3rem;
+  height: 90%;
+  width: auto;
+
   padding-bottom: 1rem;
 }
 
@@ -158,7 +164,8 @@
 .sidebar-list {
   display: flex;
   flex-direction: column;
-  height: 20%;
+  height: 40%;
+  width: auto;
 }
 
 .sidebar-description {
@@ -178,14 +185,14 @@
 }
 
 .sb-login {
-  height: 80%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
 }
 #sidebar-login {
   width: 90%;
-  height: 100%;
+  height: 20%;
   display: flex;
   justify-content: center;
   margin: auto;
@@ -203,7 +210,7 @@
   text-align: center;
   align-self: flex-end;
   font-size: 1.5rem;
-  background-color: var(--homepage-login);
+  background-color: var(--homepage-tertiary);
   border-radius: 15px;
   padding-top: 1.5rem;
 }
@@ -310,8 +317,7 @@
 .Headlines {
   position: relative;
   height: 90vh;
-  background-color: var(--homepage-main);
-  overflow: hidden;
+  background-color: var(--app-main);
 }
 
 .headline-nav {
@@ -322,7 +328,7 @@
   grid-row-gap: 0px;
   box-shadow: 0px 6px 9px -1px rgba(0, 0, 0, 0.75);
   width: auto;
-  background: var(--homepage-main);
+  background-color: var(--app-secondary);
   height: 3rem;
   z-index: 100;
 }
@@ -344,13 +350,13 @@
   padding-left: 1.5rem;
   font-size: 1rem;
   text-align: left;
-  background-color: var(--homepage-main);
+  background-color: var(--app-secondary);
   border: none;
-  border-bottom: white 2px solid;
+  border-bottom: white 1px solid;
 }
 
 .headline-search-input::placeholder {
-  color: white;
+  color: var(--homepage-secondary);
 }
 
 .headline-search-input:focus {
@@ -386,19 +392,79 @@
   padding-left: 2rem;
   width: auto;
   height: 100%;
+  margin-top: 1rem;
 }
 
 .headline-category {
-  font-size: 1rem;
+  font-size: 1.2rem;
+  font-weight: 300;
   width: 100%;
   height: auto;
   margin: auto;
-  border-right: var(--homepage-secondary) 1px solid;
 }
 
 .News-Banners {
-  height: 100%;
+  height: 90%;
   width: auto;
-  overflow: scroll;
-  border: #0781fe 1px solid;
+  overflow: hidden;
+  background-color: var(--app-main);
+  display: flex;
+  justify-content: center;
+}
+
+.News {
+  width: auto;
+  height: 100%;
+  background-color: var(--app-main);
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem;
+}
+
+.custom-news-feed {
+  width: 65%;
+  height: 100%;
+  background-color: WHITE;
+  border-radius: 1rem;
+  padding: 1rem;
+}
+
+.custom-news-main {
+  width: 55%;
+  height: 100%;
+  border: 1px solid blue;
+}
+
+.latest-news-feed {
+  width: 30%;
+  height: 100%;
+  background-color: var(--app-main);
+  border-top-left-radius: 1.5rem;
+  border-top-right-radius: 1.5rem;
+  // border: 1px white solid;
+}
+
+.latest-news-header {
+  height: 10%;
+  width: 100%;
+  background-color: white;
+  color: var(--app-secondary);
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+}
+
+#latest-news-expand {
+  font-size: 1rem;
+  color: var(--homepage-tertiary);
+}
+
+#latest-news-expand:hover {
+  cursor: pointer;
+}
+
+.lastest-news-list {
+  list-style: none;
 }

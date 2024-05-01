@@ -6,6 +6,8 @@ import { IoPersonCircle } from "react-icons/io5";
 import { sideBarFont } from "./utils/font";
 import { sideBarFontLogo } from "./utils/font";
 import { bannerFont } from "./utils/font";
+import { MdShowChart } from "react-icons/md";
+
 import Login from "./login";
 
 export default function Tabs() {
@@ -31,10 +33,20 @@ export default function Tabs() {
               {/* <span className='sidebar-description'>Economic Releases</span> */}
             </a>
           </li>
+
           <li className='sidebar-item'>
             <a className='sidebar-link' href=''>
               <span className='sidebar-icon'>
                 <ImNewspaper color='white' />
+              </span>
+              {/* <span className='sidebar-description'>Headline News</span> */}
+            </a>
+          </li>
+
+          <li className='sidebar-item'>
+            <a className='sidebar-link' href=''>
+              <span className='sidebar-icon'>
+                <MdShowChart color='white' />
               </span>
               {/* <span className='sidebar-description'>Headline News</span> */}
             </a>
