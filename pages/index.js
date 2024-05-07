@@ -1,27 +1,23 @@
-import Navigation from "../components/navigation";
-import Home from "../components/home";
-import Footer from "../components/footer";
-import Tabs from "../components/tabs";
-import HeadlineNews from "@/components/headlinenews";
+import React from "react";
+import { bannerFont } from "../components/utils/font";
 
-function HomePage(props) {
+export default function Home() {
   return (
-    <div className='App'>
-      <div className='home-enter'>
-        <div className='side-banner'>
-          <Tabs />
-        </div>
+    <main className='homepage'>
+      <video
+        className='lumiere-banner'
+        src={require("../public/src/wavey.mp4")}
+        autoPlay
+        loop
+        muted
+      />
+      <div className='banner'>
+        <h2 id='Lumiere'>Lumiere Holdings</h2>
 
-        <div className='main-banner-homepage'>
-          <Navigation />
-
-          <HeadlineNews />
-        </div>
+        <h3 id='banner-subheading' className={bannerFont.className}>
+          Making trading (i)ntuitive
+        </h3>
       </div>
-
-      <Footer />
-    </div>
+    </main>
   );
 }
-
-export default HomePage;

@@ -79,23 +79,23 @@ export default function TimeZone() {
       timezone_NY();
       timezone_London();
       timezone_Tokyo();
-    }, 60000);
+    }, 20000);
   }, []);
 
   return (
     <div className='timezone-main'>
       <div className='time-zones'>
-        <h2 id='NY-timezone'>NY</h2>
+        <h2 id='timezone'>NY</h2>
         <h2 id='NY-timezone-time'>{NY}</h2>
       </div>
 
       <div className='time-zones'>
-        <h2 id='NY-timezone'>London</h2>
+        <h2 id='timezone'>London</h2>
         <h2 id='NY-timezone-time'>{London}</h2>
       </div>
 
       <div className='time-zones'>
-        <h2 id='NY-timezone'>Tokyo</h2>
+        <h2 id='timezone'>Tokyo</h2>
         <h2 id='NY-timezone-time'>{Tokyo}</h2>
       </div>
     </div>

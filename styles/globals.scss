@@ -1,5 +1,5 @@
 :root {
-  --homepage-main: #121212;
+  --homepage-main: #000000;
   --homepage-secondary: #717171;
   --homepage-tertiary: #0781fe;
   --NavFontSize: 2rem;
@@ -14,13 +14,14 @@
   box-sizing: border-box;
 }
 
-.home-enter {
+.home-index {
   display: flex;
   max-height: 100vh;
   width: 100vw;
+  position: fixed;
 }
 .side-banner {
-  max-width: 175px;
+  width: 11rem;
   height: 100vh;
 }
 
@@ -42,14 +43,13 @@
   grid-row-gap: 0px;
   box-shadow: 0px 6px 9px -1px rgba(0, 0, 0, 0.75);
   width: auto;
-  background: black;
+  background: var(--homepage-main);
   height: auto;
   font-size: 1rem;
 }
 
 .time-nav {
   grid-column: 1 span 1;
-  padding: 1rem;
   height: 10vh;
   color: white;
   display: flex;
@@ -62,17 +62,17 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-left: 3rem;
+  padding: 0.5rem;
   font-size: 1rem;
 }
 
 .time-zones {
   display: flex;
-  font-size: 0.8rem;
+  font-size: 0.7rem;
 }
 
-#NY-timezone {
-  margin-right: 1rem;
+#timezone {
+  margin-right: 0.5rem;
 }
 
 #NY-timezone-time {
@@ -91,7 +91,7 @@
   padding-right: 3rem;
   font-size: 1.2rem;
   text-align: right;
-  background-color: black;
+  background-color: var(--homepage-main);
   border: none;
 }
 
@@ -102,24 +102,24 @@
 .main-search:focus {
   background-color: white;
   transition: ease-in 0.5s;
-  color: black;
+  color: var(--homepage-main);
 }
 
 .main-search:hover {
   background-color: white;
   transition: ease-in 0.5s;
-  color: black;
+  color: var(--homepage-main);
 }
 
 .main-search:hover::placeholder {
   transition: ease-out 0.5s;
-  color: black;
+  color: var(--homepage-main);
 }
 
 .sidebar {
   width: 100%;
   min-width: none;
-  background-color: black;
+  background-color: var(--homepage-main);
   height: 100%;
   transition: all 0.7s ease-in;
   display: flex;
@@ -129,11 +129,16 @@
 .logo-video {
   width: 100%;
   height: 10%;
+  // visibility: hidden;
+}
+
+.logo-video:hover {
+  cursor: pointer;
 }
 .sidebar-logo {
   width: 100%;
   height: 100%;
-  background-color: black;
+  background-color: var(--homepage-main);
 }
 
 .sidebar-main {
@@ -145,20 +150,16 @@
 
 .sidebar-item {
   list-style: none;
-  padding: 1rem 1rem;
-  display: flex;
-  justify-content: center;
-  text-align: center;
   margin-bottom: 1rem;
   font-size: 1rem;
-  background-color: black;
+  background-color: var(--homepage-main);
   width: 100%;
   height: 100%;
   margin: auto;
 }
 
 .sidebar-item:hover {
-  background-color: var(--homepage-secondary);
+  background-color: var(--homepage-tertiary);
 }
 
 .sidebar-list {
@@ -168,20 +169,36 @@
   width: auto;
 }
 
-.sidebar-description {
-  padding-left: 1rem;
-}
 .sidebar-link {
   text-decoration: none;
   color: white;
   border-radius: 15px;
   width: 100%;
-  height: 35px;
-  padding: 1.5rem 1rem;
+  height: 100%;
 }
 
 .sidebar-icon {
   font-size: 1.5rem;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.sidebar-icon:hover .sidebar-icon-custom {
+  display: none;
+}
+
+.sidebar-icon:hover .sidebar-description {
+  display: block;
+}
+.sidebar-description {
+  display: none;
+  font-size: 1rem;
+  text-align: center;
+  width: 100%;
 }
 
 .sb-login {
@@ -199,7 +216,7 @@
 }
 
 #sidebar-login a:hover {
-  color: black;
+  color: var(--homepage-main);
   text-decoration: none;
 }
 
@@ -207,17 +224,10 @@
   list-style: none;
   width: 90%;
   height: 5rem;
-  text-align: center;
   align-self: flex-end;
   font-size: 1.5rem;
   background-color: var(--homepage-tertiary);
   border-radius: 15px;
-  padding-top: 1.5rem;
-}
-
-.sidebar-login-link {
-  text-decoration: none;
-  color: white;
 }
 
 .lumiere-banner {
@@ -261,7 +271,7 @@
   justify-content: space-between;
 }
 .logo {
-  color: var(--homepage-main);
+  color: var(--app-secondary);
   margin-left: 10rem;
   font: var(--NavFont);
   font-size: 3rem;
@@ -309,7 +319,7 @@
 
 .socialitems a {
   text-decoration: none;
-  color: var(--homepage-main);
+  color: var(--app-secondary);
   letter-spacing: 2px;
   font-weight: 350;
 }
@@ -328,7 +338,7 @@
   grid-row-gap: 0px;
   box-shadow: 0px 6px 9px -1px rgba(0, 0, 0, 0.75);
   width: auto;
-  background-color: var(--app-secondary);
+  background-color: var(--homepage-main);
   height: 3rem;
   z-index: 100;
 }
@@ -338,7 +348,7 @@
   /* padding: 0.5rem; */
   height: 3rem;
   z-index: 1;
-  color: black;
+  color: var(--homepage-main);
   min-width: 250px;
   position: sticky;
   top: 0;
@@ -350,7 +360,7 @@
   padding-left: 1.5rem;
   font-size: 1rem;
   text-align: left;
-  background-color: var(--app-secondary);
+  background-color: var(--homepage-main);
   border: none;
   border-bottom: white 1px solid;
 }
@@ -362,18 +372,18 @@
 .headline-search-input:focus {
   background-color: white;
   transition: ease-in 0.5s;
-  color: black;
+  color: var(--homepage-main);
 }
 
 .headline-search-input:hover {
   background-color: white;
   transition: ease-in 0.5s;
-  color: black;
+  color: var(--homepage-main);
 }
 
 .headline-search-input:hover::placeholder {
   transition: ease-out 0.5s;
-  color: black;
+  color: var(--homepage-main);
 }
 
 .headline-nav-categories {
@@ -404,7 +414,7 @@
 }
 
 .News-Banners {
-  height: 90%;
+  height: 95%;
   width: auto;
   overflow: hidden;
   background-color: var(--app-main);
@@ -413,7 +423,7 @@
 }
 
 .News {
-  width: auto;
+  width: 100%;
   height: 100%;
   background-color: var(--app-main);
   display: flex;
@@ -424,36 +434,58 @@
 .custom-news-feed {
   width: 65%;
   height: 100%;
-  background-color: WHITE;
-  border-radius: 1rem;
+  background-color: var(--app-main);
   padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 10px;
 }
 
 .custom-news-main {
   width: 55%;
   height: 100%;
-  border: 1px solid blue;
+  background-color: white;
+  border-radius: 0.5rem;
 }
 
+.custom-news-article {
+  width: 40%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.custom-news-sec {
+  width: 100%;
+  height: 50%;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.saved-news-feed {
+  width: 100%;
+  height: 40%;
+  background-color: white;
+  border-radius: 10px;
+}
 .latest-news-feed {
   width: 30%;
   height: 100%;
-  background-color: var(--app-main);
-  border-top-left-radius: 1.5rem;
-  border-top-right-radius: 1.5rem;
-  // border: 1px white solid;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 10px;
 }
 
 .latest-news-header {
   height: 10%;
   width: 100%;
-  background-color: white;
-  color: var(--app-secondary);
+  background-color: var(--app-main);
+  color: white;
   display: flex;
   justify-content: space-between;
-  padding: 1rem;
-  border-top-left-radius: 1rem;
-  border-top-right-radius: 1rem;
 }
 
 #latest-news-expand {
@@ -465,6 +497,9 @@
   cursor: pointer;
 }
 
-.lastest-news-list {
+.news-feed {
   list-style: none;
+  height: 90%;
+  width: 100%;
+  background-color: white;
 }

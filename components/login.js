@@ -1,5 +1,6 @@
 import React from "react";
 import { FaRegUserCircle } from "react-icons/fa";
+import Link from "next/link";
 
 export default function Login() {
   return (
@@ -7,12 +8,14 @@ export default function Login() {
       <div className='sb-login'>
         <ul id='sidebar-login'>
           <li className='sidebar-login-item'>
-            <a className='sidebar-login-link' href=''>
-              <span className='sidebar-icon'>
-                <FaRegUserCircle color='white' />
-              </span>
+            <Link className='sidebar-link' href=''>
+              <div className='sidebar-icon'>
+                <span>
+                  <FaRegUserCircle color='white' />
+                </span>
+              </div>
               {/* <span className='sidebar-description'> Portal</span> */}
-            </a>
+            </Link>
           </li>
         </ul>
       </div>
