@@ -1,0 +1,70 @@
+.homepage {
+  position: relative;
+  height: 90vh;
+}
+
+.lumiereBanner {
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+  height: 100%;
+}
+
+.banner {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  bottom: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 0;
+}
+
+#Lumiere {
+  color: white;
+  font-size: 7rem;
+  font-weight: 450;
+  width: 42rem;
+  text-align: center;
+}
+
+#bannerSubheading {
+  color: white;
+  font-size: 2rem;
+  font-weight: 200;
+  margin-top: 3rem;
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+  border-right: 2px solid rgba(7, 129, 254);
+  width: 22rem;
+  text-align: center;
+  animation: typewriter 4s steps(24) 0.5s 1 normal both,
+    blinkCursor 600ms steps(24) infinite normal;
+}
+
+.bannerSubheadingToday {
+  color: #0781fe;
+}
+
+@keyframes typewriter {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 22rem;
+  }
+}
+
+@keyframes blinkCursor {
+  from {
+    border-right-color: rgba(7, 129, 254);
+  }
+
+  to {
+    border-right-color: transparent;
+  }
+}

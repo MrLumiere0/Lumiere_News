@@ -1,57 +1,71 @@
 import React from "react";
 import Head from "next/head";
-import Carousel from "./custom.js/Carousel-main";
+import Carousel from "./custom.js/carousel-main";
+import Link from "next/link";
+import styles from "../../styles/headline.module.css";
+import Article from "./custom.js/article-sec";
 
 export default function HeadlineNews() {
   return (
-    <div className='Headlines'>
+    <div className={styles.Headlines}>
       <>
         <Head>
           <title>Headline News</title>
           <meta name='Headlines' />
         </Head>
       </>
-      <nav className='headline-nav'>
-        <div className='headline-nav-search'>
+      <nav className={styles.headlineNav}>
+        <div className={styles.headlineNavSearch}>
           <input
             type='text'
             placeholder='Search headlines...'
-            className='headline-search-input'
+            className={styles.headlineSearchInput}
           />
         </div>
 
-        <div className='headline-nav-categories'>
-          <ul className='categories-list'>
-            <li className='headline-category'>Economics</li>
-            <li className='headline-category'>Stocks</li>
-            <li className='headline-category'>Cryptocurrency</li>
-            <li className='headline-category'>International affairs</li>
+        <div className={styles.headlineNavCategories}>
+          <ul className={styles.categoriesList}>
+            <Link href='' className={styles.headlineLink}>
+              <li className={styles.headlineCategory}>Economics</li>
+            </Link>
+
+            <Link href='' className={styles.headlineLink}>
+              <li className={styles.headlineCategory}>Stocks</li>
+            </Link>
+            <Link href='' className={styles.headlineLink}>
+              <li className={styles.headlineCategory}>Cryptocurrency</li>
+            </Link>
+            <Link href='' className={styles.headlineLink}>
+              <li className={styles.headlineCategory}>International affairs</li>
+            </Link>
             {/* <li className='headline-category'>Tech</li> */}
           </ul>
         </div>
       </nav>
 
-      <div className='News-Banners'>
-        <div className='News'>
-          <div className='custom-news-feed'>
-            <div className='custom-news-main'>
+      <div className={styles.NewsBanners}>
+        <div className={styles.News}>
+          <div className={styles.customNewsFeed}>
+            <div className={styles.customNewsMain}>
               <Carousel />
             </div>
 
-            <div className='custom-news-article'>
-              <div className='custom-news-sec'></div>
-              <div className='saved-news-feed'></div>
+            <div className={styles.customNewsArticle}>
+              <div className={styles.customNewsSec}>
+                <Article />
+              </div>
+              <div className={styles.savedNewsFeed}></div>
             </div>
           </div>
 
-          <div className='latest-news-feed'>
-            <div className='latest-news-header'>
-              <h2 className='latest-news-heading'>Latest News</h2>
-              <h2 id='latest-news-expand'>Expand</h2>
+          <div className={styles.latestNewsFeed}>
+            <div className={styles.latestNewsHeader}>
+              <h2 className={styles.latestNewsHeading}>Latest News</h2>
+              <h2 id={styles.latestNewsExpand}>Expand</h2>
             </div>
-            <div className='news-feed'>
-              <ul className='lastest-news-list'>
-                <li className='latest-news-item'></li>
+            <div className={styles.newsFeed}>
+              <ul className={styles.lastestNewsList}>
+                <li className={styles.latestNewsItem}></li>
               </ul>
             </div>
           </div>

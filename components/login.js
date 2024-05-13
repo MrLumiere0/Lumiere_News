@@ -10,11 +10,10 @@ export default function Login() {
           <li className='sidebar-login-item'>
             <Link className='sidebar-link' href=''>
               <div className='sidebar-icon'>
-                <span>
+                <span className='login-icon'>
                   <FaRegUserCircle color='white' />
                 </span>
               </div>
-              {/* <span className='sidebar-description'> Portal</span> */}
             </Link>
           </li>
         </ul>

@@ -1,0 +1,223 @@
+.carousel {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 1rem;
+}
+
+.carouselCard {
+  height: 50%;
+  max-height: 350px;
+  width: 100%;
+  position: relative;
+}
+
+.cardMain {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.expand {
+  min-width: 100%;
+  height: 3rem;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  z-index: 1;
+}
+
+.button {
+  position: absolute;
+  right: 0;
+  width: 4rem;
+  height: 2rem;
+  background-color: black;
+  border: none;
+  color: white;
+  font-size: 0.77rem;
+}
+
+.cardDetails {
+  height: 470px;
+  width: 100%;
+  position: relative;
+}
+.mainDetails {
+  height: 400px;
+  width: 85%;
+  margin-left: 4rem;
+  margin-top: -5rem;
+  color: white;
+}
+
+.cardTitle {
+  font-size: 2rem;
+  width: 100%;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  overflow: hidden;
+}
+
+.cardDescription {
+  height: 80px;
+  width: 100%;
+  font-weight: 300;
+  font-size: 1.4rem;
+  padding-left: 0.5rem;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+.cardContent {
+  height: 200px;
+  width: 100%;
+  font-weight: 300;
+  padding-left: 0.5rem;
+  background-color: var(--app-main);
+  border-radius: 5px;
+  overflow: scroll;
+  overflow-y: scroll;
+  padding-top: 1rem;
+  padding-left: 1rem;
+  font-size: 1.1rem;
+}
+
+.cardSource {
+  margin-top: 1rem;
+  width: 100%;
+  height: 3rem;
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.1rem;
+  font-weight: 100;
+  color: var(--homepage-tertiary);
+}
+
+.Source {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.sourceCalender {
+  margin-right: 0.5rem;
+}
+
+.features {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.keyword {
+  max-width: 8rem;
+  width: auto;
+  height: auto;
+  max-height: 100%;
+  border: none;
+  color: var(--homepage-tertiary);
+  font-size: 1rem;
+  text-wrap: wrap;
+  overflow: scroll;
+}
+.article {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 1rem;
+}
+
+.articleExpand {
+  height: 10%;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  border-bottom: 2px solid rgb(0, 0, 0, 0.25);
+  margin-bottom: 1rem;
+}
+
+.articleKeyword {
+  max-width: 8rem;
+  width: auto;
+  height: auto;
+  max-height: 100%;
+  border: none;
+  color: var(--homepage-tertiary);
+  font-size: 1rem;
+  text-wrap: wrap;
+  overflow: scroll;
+}
+
+.articleButton {
+  position: absolute;
+  right: 0;
+  width: 4rem;
+  height: 2rem;
+  background-color: black;
+  border: none;
+  color: white;
+  font-size: 0.77rem;
+}
+
+.articleList {
+  height: 310px;
+  width: 100%;
+}
+
+.list {
+  width: 100%;
+  height: 100%;
+  list-style: none;
+  color: white;
+}
+
+.articleHeadline {
+  height: 6rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.articleCardDetails {
+  width: 65%;
+  height: 100%;
+}
+
+.articleMainDetails {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+}
+
+.articleCardTitle {
+  font-size: 1.3rem;
+  font-weight: 700;
+  width: 100%;
+  height: 60%;
+  overflow: hidden;
+  text-wrap: wrap;
+}
+
+.articleCardDescription {
+  height: 40%;
+  width: 100%;
+  font-weight: 300;
+  font-size: 1rem;
+  overflow: scroll;
+}
+.articleCardSource {
+  width: 30%;
+  height: 100%;
+}
+
+.articleSource {
+  width: 100%;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-bottom: 1rem;
+}

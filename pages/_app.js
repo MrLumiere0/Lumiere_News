@@ -1,4 +1,4 @@
-import "@/styles/globals.scss";
+import "../styles/globals.scss";
 import Navigation from "../components/navigation";
 import Tabs from "../components/tabs";
 import Head from "next/head";
