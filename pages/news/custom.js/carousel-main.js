@@ -1,10 +1,10 @@
+import styles from "../../../styles/customNews.module.css";
+
 import { FaRegBookmark } from "react-icons/fa6";
 import { FaBookmark } from "react-icons/fa";
 import { SlCalender } from "react-icons/sl";
-
 import Image from "next/image";
-import AMG from "../../../public/src/AMGGT63S.jpeg";
-import styles from "../../../styles/customNews.module.css";
+import car from "../../../public/src/AMGGT63S.jpeg";
 import ks from "../../../public/src/kj.webp";
 
 export default function Carousel() {
@@ -18,7 +18,7 @@ export default function Carousel() {
       <div className={styles.carouselCard}>
         <div className={styles.cardMain}>
           <div className={styles.carouselImage}>
-            <Image src={AMG} fill={true} objectFit='contain' alt='' />
+            <Image src={car} fill={true} objectFit='contain' alt='' />
           </div>
         </div>
 
