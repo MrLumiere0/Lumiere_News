@@ -6,7 +6,7 @@
 }
 
 .carouselCard {
-  height: 50%;
+  height: 100%;
   max-height: 350px;
   width: 100%;
   position: relative;
@@ -20,7 +20,7 @@
 
 .expand {
   min-width: 100%;
-  height: 3rem;
+  height: 2rem;
   display: flex;
   justify-content: space-between;
   position: relative;
@@ -44,7 +44,7 @@
   position: relative;
 }
 .mainDetails {
-  height: 400px;
+  height: 370px;
   width: 85%;
   margin-left: 4rem;
   margin-top: -5rem;
@@ -100,6 +100,10 @@
   justify-content: space-between;
 }
 
+.sourceName {
+  color: white;
+}
+
 .sourceCalender {
   margin-right: 0.5rem;
 }
@@ -129,11 +133,11 @@
 }
 
 .articleExpand {
-  height: 10%;
+  height: 3rem;
   display: flex;
   justify-content: space-between;
   position: relative;
-  border-bottom: 2px solid rgb(0, 0, 0, 0.25);
+  border-bottom: 1px solid rgb(255, 255, 255, 0.675);
   margin-bottom: 1rem;
 }
 
@@ -161,7 +165,7 @@
 }
 
 .articleList {
-  height: 310px;
+  height: 300px;
   width: 100%;
 }
 
@@ -170,13 +174,17 @@
   height: 100%;
   list-style: none;
   color: white;
+  overflow: hidden;
+  overflow-y: scroll;
 }
 
 .articleHeadline {
-  height: 6rem;
+  height: 100px;
   width: 100%;
   display: flex;
   justify-content: space-between;
+  padding: 0.5rem;
+  /* border-bottom: 1px solid rgb(255, 255, 255, 0.675); */
 }
 
 .articleCardDetails {
@@ -220,4 +228,23 @@
   flex-direction: column;
   justify-content: space-between;
   padding-bottom: 1rem;
+  color: white;
+}
+
+.sourceName {
+  font-size: 1rem;
+  width: 100%;
+  height: 25px;
+}
+
+.sourceDate {
+  color: var(--homepage-tertiary);
+}
+
+.articleSourceCalender {
+  margin-right: 1rem;
+}
+
+.articleFeature {
+  color: var(--homepage-tertiary);
 }

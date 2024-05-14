@@ -12,22 +12,22 @@ export default function Article() {
       </div>
       <div className={styles.articleList}>
         <ul className={styles.list}>
+          {/* .map function when we fetch data from API 
+            turn LI  into a component and run through map*/}
           <li className={styles.articleHeadline}>
             <div className={styles.articleCardDetails}>
               <div className={styles.articleMainDetails}>
-                <h2 className={styles.articleCardTitle}>
-                  Mercedes Benz GT 63S 4 Matic
-                </h2>
+                <h2 className={styles.articleCardTitle}>Lorem Ipsum </h2>
                 <h3 className={styles.articleCardDescription}>
-                  The AMG GT 4-door Coupe takes driving performance to
-                  dimensions far beyond the ordinary.{" "}
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                 </h3>
               </div>
             </div>
             <div className={styles.articleCardSource}>
               <div className={styles.articleSource}>
-                <p className='source-name'>Mbusa.com</p>
-                <p className='source-date'>
+                <p className={styles.sourceName}>Mbusa.com</p>
+                <p className={styles.sourceDate}>
                   <span className={styles.articleSourceCalender}>
                     <SlCalender />
                   </span>
@@ -35,7 +35,7 @@ export default function Article() {
                 </p>
               </div>
 
-              <div className={styles.articleFeatures}>
+              <div className={styles.articleFeature}>
                 <FaRegBookmark />
               </div>
             </div>

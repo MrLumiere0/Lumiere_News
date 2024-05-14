@@ -17,7 +17,7 @@ export default function TimeZone() {
       var date = data.unixtime;
       date = new Date(date * 1000);
       date = date.toLocaleTimeString("en-US");
-      date = date.substr(0, 7) + date.substr(7, 9);
+      date = date.substr(0, 4) + date.substr(7, 9);
       setNY(date);
     };
 
@@ -27,7 +27,7 @@ export default function TimeZone() {
       var date = data.unixtime;
       date = new Date(date * 1000);
       date = date.toLocaleTimeString("en-US", { timeZone: "Europe/London" });
-      date = date.substr(0, 7) + date.substr(7, 9);
+      date = date.substr(0, 4) + date.substr(7, 9);
       SetLondon(date);
     };
 
@@ -37,7 +37,7 @@ export default function TimeZone() {
       var date = data.unixtime;
       date = new Date(date * 1000);
       date = date.toLocaleTimeString("en-US", { timeZone: "Asia/Tokyo" });
-      date = date.substr(0, 7) + date.substr(7, 9);
+      date = date.substr(0, 4) + date.substr(7, 9);
       setTokyo(date);
     };
 
@@ -53,7 +53,7 @@ export default function TimeZone() {
         var date = data.unixtime;
         date = new Date(date * 1000);
         date = date.toLocaleTimeString("en-US");
-        date = date.substr(0, 7) + date.substr(7, 9);
+        date = date.substr(0, 4) + date.substr(7, 9);
         setNY(date);
       };
 
@@ -63,7 +63,7 @@ export default function TimeZone() {
         var date = data.unixtime;
         date = new Date(date * 1000);
         date = date.toLocaleTimeString("en-US", { timeZone: "Europe/London" });
-        date = date.substr(0, 7) + date.substr(7, 9);
+        date = date.substr(0, 4) + date.substr(7, 9);
         SetLondon(date);
       };
 
@@ -73,7 +73,7 @@ export default function TimeZone() {
         var date = data.unixtime;
         date = new Date(date * 1000);
         date = date.toLocaleTimeString("en-US", { timeZone: "Asia/Tokyo" });
-        date = date.substr(0, 7) + date.substr(7, 9);
+        date = date.substr(0, 4) + date.substr(7, 9);
         setTokyo(date);
       };
       timezone_NY();

@@ -10,12 +10,13 @@ import ks from "../../../public/src/kj.webp";
 export default function Carousel() {
   return (
     <div className={styles.carousel}>
-      {/* .map function */}
+      <div className={styles.expand}>
+        <button className={styles.button}>Expand</button>
+      </div>
+      {/* .map function when we fetch data from API 
+            turn carousel Card into a component and run through map*/}
       <div className={styles.carouselCard}>
         <div className={styles.cardMain}>
-          <div className={styles.expand}>
-            <button className={styles.button}>Expand</button>
-          </div>
           <div className={styles.carouselImage}>
             <Image src={AMG} fill={true} objectFit='contain' alt='' />
           </div>
@@ -23,35 +24,28 @@ export default function Carousel() {
 
         <div className={styles.cardDetails}>
           <div className={styles.mainDetails}>
-            <h2 className={styles.cardTitle}>Mercedes Benz GT 63S 4 Matic</h2>
+            <h2 className={styles.cardTitle}>Lorem ipsum</h2>
             <h3 className={styles.cardDescription}>
-              The AMG GT 4-door Coupe takes driving performance to dimensions
-              far beyond the ordinary.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua.
             </h3>
             <p className={styles.cardContent}>
-              Seductively sculpted muscle echoes the strength within. AMG's
-              expertise in developing racecars and road cars creates a body
-              that's both roomy and rigid. Performance-optimized materials
-              include carbon fiber-reinforced polymers.The first four-door
-              developed entirely by Mercedes-AMG extends the joys of motoring to
-              all its passengers. Seating options for up to five offer a wide
-              range of comfort and performance enhancements. Also available: a
-              glass Panorama roof, a 3-passenger rear seat, and executive rear
-              seating with a center console. Seductively sculpted muscle echoes
-              the strength within. AMG's expertise in developing racecars and
-              road cars creates a body that's both roomy and rigid.
-              Performance-optimized materials include carbon fiber-reinforced
-              polymers.The first four-door developed entirely by Mercedes-AMG
-              extends the joys of motoring to all its passengers. Seating
-              options for up to five offer a wide range of comfort and
-              performance enhancements. Also available: a glass Panorama roof, a
-              3-passenger rear seat, and executive rear seating with a center
-              console.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis
+              hendrerit dolor magna eget. Cursus metus aliquam eleifend mi in
+              nulla posuere. Pellentesque adipiscing commodo elit at imperdiet
+              dui. Enim sit amet venenatis urna cursus eget nunc scelerisque
+              viverra. Iaculis eu non diam phasellus vestibulum lorem sed risus
+              ultricies. Proin sed libero enim sed. Morbi non arcu risus quis
+              varius quam quisque id diam. Sed arcu non odio euismod lacinia at.
+              Id ornare arcu odio ut. Nisl nisi scelerisque eu ultrices vitae.
+              Erat imperdiet sed euismod nisi porta lorem mollis aliquam. Sit
+              amet luctus venenatis lectus magna fringilla urna porttitor.
             </p>
           </div>
           <div className={styles.cardSource}>
             <div className={styles.Source}>
-              <p className='source-name'>Mbusa.com</p>
+              <p className={styles.sourceName}>Mbusa.com</p>
               <p className='source-date'>
                 <span className={styles.sourceCalender}>
                   <SlCalender />
