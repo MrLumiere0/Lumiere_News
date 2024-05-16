@@ -4,6 +4,8 @@ import Carousel from "./custom.js/carousel-main";
 import Link from "next/link";
 import styles from "../../styles/headline.module.css";
 import Article from "./custom.js/article-sec";
+import LatestNews from "./custom.js/latest";
+import SavedNews from "./custom.js/saved-sec";
 
 export default function HeadlineNews() {
   return (
@@ -54,20 +56,14 @@ export default function HeadlineNews() {
               <div className={styles.customNewsSec}>
                 <Article />
               </div>
-              <div className={styles.savedNewsFeed}></div>
+              <div className={styles.customSavedNews}>
+                <SavedNews />
+              </div>
             </div>
           </div>
 
           <div className={styles.latestNewsFeed}>
-            <div className={styles.latestNewsHeader}>
-              <h2 className={styles.latestNewsHeading}>Latest News</h2>
-              <h2 id={styles.latestNewsExpand}>Expand</h2>
-            </div>
-            <div className={styles.newsFeed}>
-              <ul className={styles.lastestNewsList}>
-                <li className={styles.latestNewsItem}></li>
-              </ul>
-            </div>
+            <LatestNews />
           </div>
         </div>
       </div>

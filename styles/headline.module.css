@@ -113,7 +113,7 @@
 
 .customNewsFeed {
   width: 65%;
-  height: 100%;
+  height: 850px;
   background-color: var(--app-main);
   padding: 1rem;
   display: flex;
@@ -126,17 +126,16 @@
   min-height: 820px;
   height: 100%;
   background-color: var(--app-main);
-  border-radius: 0.5rem;
   margin-right: 2rem;
 }
 
 .customNewsArticle {
   width: 40%;
-  min-width: 350px;
-  max-height: 820px;
+  min-height: 820px;
+  height: 100%;
+  background-color: var(--app-main);
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
 }
 
 .customNewsSec {
@@ -144,43 +143,18 @@
   height: 400px;
 }
 
-.savedNewsFeed {
+.customSavedNews {
   width: 100%;
-  height: 300px;
-  background-color: white;
+  min-height: 350px;
   border-radius: 10px;
+  background-color: white;
 }
+
 .latestNewsFeed {
   width: 30%;
-  height: 100%;
+  height: 850px;
   padding: 1rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  border-radius: 10px;
-}
-
-.latestNewsHeader {
-  height: 10%;
-  width: 100%;
-  background-color: var(--app-main);
-  color: white;
-  display: flex;
-  justify-content: space-between;
-}
-
-#latestNewsExpand {
-  font-size: 1rem;
-  color: var(--homepage-tertiary);
-}
-
-#latest-news-expand:hover {
-  cursor: pointer;
-}
-
-.newsFeed {
-  list-style: none;
-  height: 90%;
-  width: 100%;
-  background-color: white;
 }

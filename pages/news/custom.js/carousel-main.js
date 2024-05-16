@@ -11,6 +11,8 @@ export default function Carousel() {
   return (
     <div className={styles.carousel}>
       <div className={styles.expand}>
+        <h2 className={styles.keyword}>#Economics</h2>
+
         <button className={styles.button}>Expand</button>
       </div>
       {/* .map function when we fetch data from API 
@@ -56,7 +58,6 @@ export default function Carousel() {
 
             <div className={styles.features}>
               <FaRegBookmark />
-              <h2 className={styles.keyword}>#Economics</h2>
             </div>
           </div>
         </div>
