@@ -38,7 +38,7 @@ export default function HeadlineNews() {
               <li className={styles.headlineCategory}>Cryptocurrency</li>
             </Link>
             <Link href='' className={styles.headlineLink}>
-              <li className={styles.headlineCategory}>International affairs</li>
+              <li className={styles.headlineCategory}>International Affairs</li>
             </Link>
             {/* <li className='headline-category'>Tech</li> */}
           </ul>
