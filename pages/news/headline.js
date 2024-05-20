@@ -1,11 +1,11 @@
 import React from "react";
 import Head from "next/head";
-import Carousel from "./custom.js/carousel-main";
+import MainList from "./custom-components.js/main/main";
 import Link from "next/link";
 import styles from "../../styles/headline.module.css";
-import Article from "./custom.js/article-sec";
-import LatestNews from "./custom.js/latest";
-import SavedNews from "./custom.js/saved-sec";
+import Article from "./custom-components.js/article/section";
+import LatestNews from "./custom-components.js/latest/latest";
+import SavedNews from "./custom-components.js/article/saved-sec";
 
 export default function HeadlineNews() {
   return (
@@ -28,18 +28,22 @@ export default function HeadlineNews() {
         <div className={styles.headlineNavCategories}>
           <ul className={styles.categoriesList}>
             <Link href='' className={styles.headlineLink}>
-              <li className={styles.headlineCategory}>Economics</li>
+              <li className={styles.headlineCategory}>Business</li>
             </Link>
 
             <Link href='' className={styles.headlineLink}>
-              <li className={styles.headlineCategory}>Stocks</li>
+              <li className={styles.headlineCategory}>Technology</li>
+            </Link>
+            <Link href='' className={styles.headlineLink}>
+              <li className={styles.headlineCategory}>Science</li>
+            </Link>
+            <Link href='' className={styles.headlineLink}>
+              <li className={styles.headlineCategory}>Stock Market</li>
             </Link>
             <Link href='' className={styles.headlineLink}>
               <li className={styles.headlineCategory}>Cryptocurrency</li>
             </Link>
-            <Link href='' className={styles.headlineLink}>
-              <li className={styles.headlineCategory}>International Affairs</li>
-            </Link>
+
             {/* <li className='headline-category'>Tech</li> */}
           </ul>
         </div>
@@ -49,7 +53,7 @@ export default function HeadlineNews() {
         <div className={styles.News}>
           <div className={styles.customNewsFeed}>
             <div className={styles.customNewsMain}>
-              <Carousel />
+              <MainList />
             </div>
 
             <div className={styles.customNewsArticle}>

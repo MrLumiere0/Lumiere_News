@@ -1,0 +1,42 @@
+import styles from "../../../../styles/customNews.module.css";
+import { useEffect, useState } from "react";
+import SectionListItem from "./section-list-item";
+
+export default function Article() {
+  const [sectNews, setSectNews] = useState([]);
+
+  const url =
+    "https://newsapi.org/v2/everything?q=stock&pageSize=50&apiKey=4db170d9535f4dccad0bbd35c58dc6b9";
+
+  //     "https://newsapi.org/v2/everything?q=stock%market&apiKey=4db170d9535f4dccad0bbd35c58dc6b9";
+  //
+  useEffect(() => {
+    const fetchSecNews = async () => {
+      try {
+        const response = await fetch(url);
+        const data = await response.json();
+        setSectNews(data.articles);
+      } catch (err) {
+        console.log("error");
+      }
+    };
+
+    fetchSecNews();
+  }, []);
+
+  return (
+    <div className={styles.article}>
+      <div className={styles.articleHeader}>
+        <h2 className={styles.articleKeyword}>#Stock</h2>
+        <button className={styles.articleButton}>Expand</button>
+      </div>
+      <div className={styles.articleFeed}>
+        <ul className={styles.articleList}>
+          {sectNews.map((headline) => (
+            <SectionListItem {...headline} />
+          ))}
+        </ul>
+      </div>
+    </div>
+  );
+}

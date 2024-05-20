@@ -4,7 +4,7 @@ import styles from "../styles/homepage.module.css";
 
 export default function Home() {
   return (
-    <main className='homepage'>
+    <div className='homepage'>
       <video
         className={styles.lumiereBanner}
         src={require("../public/src/wavey.mp4")}
@@ -20,6 +20,6 @@ export default function Home() {
           <span className={styles.bannerSubheadingToday}> today?</span>
         </h3>
       </div>
-    </main>
+    </div>
   );
 }
