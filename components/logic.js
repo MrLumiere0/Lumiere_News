@@ -11,7 +11,7 @@ export default function formValidationSignUp(
     validationErrors.first = "First Name is required";
   }
   if (!lastName.trim()) {
-    validationErrors.last = "Email is required";
+    validationErrors.last = "Last Name is required";
   }
   if (!email.trim()) {
     validationErrors.email = "Email is required";
