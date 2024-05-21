@@ -1,6 +1,6 @@
 import "../styles/globals.scss";
-import Navigation from "../components/navigation";
-import Tabs from "../components/tabs";
+import Navigation from "../components/static/navigation";
+import Tabs from "../components/static/tabs";
 import Head from "next/head";
 
 export default function App({ Component, pageProps }) {

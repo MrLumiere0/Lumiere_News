@@ -10,7 +10,7 @@ export default function Tabs({ currentDisplay }) {
   return (
     <aside className='sidebar '>
       <div className='logo-video'>
-        {currentDisplay.name == "Home" ? (
+        {currentDisplay.name == "Home" || "SignIn" ? (
           <div className='logo-video'> </div>
         ) : (
           <Link className='sidebar-link' href='/'>

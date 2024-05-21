@@ -7,7 +7,7 @@ import Article from "./custom-components.js/article/section";
 import LatestNews from "./custom-components.js/latest/latest";
 import SavedNews from "./custom-components.js/article/saved-sec";
 
-export default function HeadlineNews() {
+/*export default */ function HeadlineNews() {
   return (
     <div className={styles.Headlines}>
       <>
