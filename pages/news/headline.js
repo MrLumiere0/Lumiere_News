@@ -1,13 +1,13 @@
 import React from "react";
 import Head from "next/head";
-import MainList from "./custom-components.js/main/main";
+import MainList from "../../components/custom-components.js/main/main";
 import Link from "next/link";
 import styles from "../../styles/headline.module.css";
-import Article from "./custom-components.js/article/section";
-import LatestNews from "./custom-components.js/latest/latest";
-import SavedNews from "./custom-components.js/article/saved-sec";
+import Article from "../../components/custom-components.js/article/section";
+import LatestNews from "../../components/custom-components.js/latest/latest";
+import SavedNews from "../../components/custom-components.js/article/saved-sec";
 
-/*export default */ function HeadlineNews() {
+export default function HeadlineNews() {
   return (
     <div className={styles.Headlines}>
       <>

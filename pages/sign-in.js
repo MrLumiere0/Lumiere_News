@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useRouter } from "next/router";
 import styles from "../styles/sign-in.module.css";
 import { sideBarFontLogo } from "../components/utils/font";
+import { formValidationSignIn } from "../components/logic";
 // import { auth } from "../config/firebase.js";
 // import { signInWithEmailAndPassword } from "firebase/auth";
 
@@ -15,18 +16,7 @@ export default function SignIn() {
 
   const userLogin = async (event) => {
     event.preventDefault();
-    const validationErrors = {};
-    if (!email.trim()) {
-      validationErrors.email = "Email is required";
-    } else if (/\S+@\S+\.S+/.test(email)) {
-      validationErrors.username = "Valid email is required";
-    }
-
-    if (!password.trim()) {
-      validationErrors.password = "Password is required";
-    }
-    setErrors(validationErrors);
-
+    formValidationSignIn({ email }, { password }, { setErrors });
     try {
       const user = await signInWithEmailAndPassword(auth, email, password);
       setLoginUser(user);
@@ -50,7 +40,7 @@ export default function SignIn() {
         </div>
         <div className={styles.loginSection}>
           <h2 id={styles.loginHeader} className={sideBarFontLogo.className}>
-            MY LUMIERE NEWS
+            MY ACCOUNT
           </h2>
           <form className={styles.loginForm} onSubmit={userLogin}>
             <input

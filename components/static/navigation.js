@@ -21,7 +21,7 @@ export default function Navigation() {
           </div>
         </Link>
 
-        <Link href='' className='action-link'>
+        <Link href='/sign-up' className='action-link'>
           <div className='action-button'>
             <span className='action'>Sign Up</span>
           </div>

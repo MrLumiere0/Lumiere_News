@@ -1,4 +1,4 @@
-import styles from "../../../../styles/customNews.module.css";
+import styles from "../../../styles/customNews.module.css";
 import { useEffect, useState } from "react";
 import ListItem from "./latest-list-item";
 
@@ -32,8 +32,6 @@ export default function LatestNews() {
           {latestNews.map((headline) => (
             <ListItem {...headline} />
           ))}
-
-          <ListItem />
         </ul>
       </div>
     </div>

@@ -1,15 +1,12 @@
-import styles from "../../../../styles/customNews.module.css";
+import styles from "../../../styles/customNews.module.css";
 import Image from "next/image";
 import { FaRegBookmark } from "react-icons/fa6";
 import { FaBookmark } from "react-icons/fa";
 import { SlCalender } from "react-icons/sl";
-import car from "../../../../public/src/AMGGT63S.jpeg";
-import ks from "../../../../public/src/kj.webp";
-import bill from "../../../../public/src/bill.jpg";
 
 export default function MainListItem({ ...headline }) {
-  // let date = headline.publishedAt;
-  // date = date.substr(0, 10);
+  let date = headline.publishedAt;
+  date = date.substr(0, 10);
 
   return (
     <li className={styles.mainHeadline}>

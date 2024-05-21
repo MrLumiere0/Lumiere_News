@@ -8,7 +8,7 @@ export default function Login() {
       <div className='sb-login'>
         <ul id='sidebar-login'>
           <li className='sidebar-login-item'>
-            <Link className='sidebar-link' href='/signin'>
+            <Link className='sidebar-link' href='/sign-in'>
               <div className='sidebar-icon'>
                 <span className='login-icon'>
                   <FaRegUserCircle color='white' />

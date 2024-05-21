@@ -1,4 +1,4 @@
-import styles from "../../../../styles/customNews.module.css";
+import styles from "../../../styles/customNews.module.css";
 import MainListItem from "./main-list-item";
 import { useEffect, useState } from "react";
 

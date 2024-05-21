@@ -1,7 +1,7 @@
 import { FaRegBookmark } from "react-icons/fa6";
 import { FaBookmark } from "react-icons/fa";
 import { SlCalender } from "react-icons/sl";
-import styles from "../../../../styles/customNews.module.css";
+import styles from "../../../styles/customNews.module.css";
 
 export default function SectionListItem({ ...headline }) {
   let date = headline.publishedAt;

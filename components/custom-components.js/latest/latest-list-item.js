@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "../../../../styles/customNews.module.css";
+import styles from "../../../styles/customNews.module.css";
 import { FaRegBookmark } from "react-icons/fa6";
 import { FaBookmark } from "react-icons/fa";
 import { SlCalender } from "react-icons/sl";

@@ -55,15 +55,15 @@
 */
 }
 .mainCardDetails {
-  width: 70%;
+  width: 100%;
   height: 100%;
   display: flex;
   flex-wrap: nowrap;
 }
 
 .mainImage {
-  width: 25%;
-  height: 100%;
+  width: 100%;
+  height: auto;
 }
 
 .mainDynamicImage {
@@ -73,11 +73,13 @@
 }
 
 .mainDetails {
-  height: 100%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
   padding-right: 1rem;
+  height: 100%;
+  margin-left: 2rem;
 }
 
 .mainCardTitle {
@@ -134,14 +136,18 @@
   text-overflow: ellipsis;
 }
 
+.mainSourceDate {
+  color: var(--homepage-tertiary);
+}
 .mainSourceCalender {
   margin-right: 1rem;
 }
 
-.mainFfeatures {
+.mainFeature {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  color: var(--homepage-tertiary);
 }
 
 .keyword {
@@ -254,7 +260,7 @@
 
 .articleSource {
   width: 100%;
-  height: 80%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -265,7 +271,7 @@
 
 .articleSourceName {
   width: 100%;
-  height: 25px;
+  height: auto;
   color: white;
 }
 
