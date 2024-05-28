@@ -64,7 +64,7 @@ export default function HeadlineNews() {
       </nav>
 
       <div className={styles.NewsBanners}>
-        {/* {searchResult} */}
+        {searchResult}
         {modalOpen &&
           createPortal(
             <SearchModal
