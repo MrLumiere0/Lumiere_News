@@ -5,10 +5,15 @@ import "react-date-range/dist/styles.css";
 import "react-date-range/dist/theme/default.css";
 import { useState } from "react";
 import { useEffect } from "react";
+import { useRouter } from "next/navigation";
+import { SlCalender } from "react-icons/sl";
 
 export default function SearchModal({ onClick, onCancel }) {
+  const router = useRouter();
+
   // keyword State and logic
   const [keyword, setKeyword] = useState("");
+  const [errors, setErrors] = useState({});
 
   const handleNewKeyword = (input) => {
     try {
@@ -90,38 +95,58 @@ export default function SearchModal({ onClick, onCancel }) {
       };
 
       update();
-      console.log(keyword);
-      console.log(url);
+      // console.log(keyword);
+      // console.log(url);
     };
     updateURL();
   }),
     [];
 
+  const submitForm = (event) => {
+    event.preventDefault();
+    const validationErrors = {};
+
+    if (!keyword.trim()) {
+      validationErrors.keyword = "Keyword is required";
+      setErrors(validationErrors);
+    } else if (keyword.trim()) {
+      onClick();
+      console.log(url);
+      router.push("/news/search-results");
+    } else
+      (error) => {
+        console.log("error");
+      };
+  };
+
   return (
-    <div
-      className={styles.modal}
-      // Click on outside of form to exit out of modal, trouble targeting class
-      // onClick={(e) => {
-      //   if (e.target.className === "modal") {
-      //     onCancel;
-      //   }
-      // }}
-    >
-      <form className={styles.form}>
+    // Click on outside of form to exit out of modal, trouble targeting class modal
+    // onClick={(e) => {
+    //   if (e.target.className === "modal") {
+    //     onCancel;
+    //   }
+    // }}
+    <div className={styles.modal}>
+      <form className={styles.form} onSubmit={submitForm}>
         <input
-          type='text'
+          type='keyword'
           placeholder='Search headlines...'
           onChange={(e) => handleNewKeyword(e.target.value)}
           className={styles.keyword}
           autoFocus
         />
+        {errors.keyword && (
+          <span className={styles.error}>{errors.keyword}</span>
+        )}
         <p onClick={handleShowRangeClick} className={styles.dateRange}>
-          {isRangeSelected
-            ? `${format(range.startDate, "yyyy-MM-dd")} to ${format(
-                range.endDate,
-                "yyyy-MM-dd"
-              )}`
-            : "Range Desired:"}
+          {isRangeSelected ? (
+            `${format(range.startDate, "yyyy-MM-dd")} to ${format(
+              range.endDate,
+              "yyyy-MM-dd"
+            )}`
+          ) : (
+            <SlCalender />
+          )}
         </p>
         <div className={styles.calender}>
           {showRange && (
@@ -158,9 +183,10 @@ export default function SearchModal({ onClick, onCancel }) {
           </button>
           <button
             className={styles.buttonSubmit}
-            onClick={() => {
+            onSubmit={() => {
               onClick(keyword);
             }}
+            type='submit'
           >
             Submit
           </button>

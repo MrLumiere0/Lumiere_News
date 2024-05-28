@@ -10,7 +10,7 @@ export default function App({ Component, pageProps }) {
     <div className='App'>
       <>
         <Head>
-          <title>Lumiere Trading</title>
+          <title>Lumiere News</title>
         </Head>
       </>
 

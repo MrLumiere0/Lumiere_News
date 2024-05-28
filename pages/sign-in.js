@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useRouter } from "next/router";
 import styles from "../styles/sign-in.module.css";
 import { sideBarFontLogo } from "../components/utils/font";
-import { formValidationSignIn } from "../components/logic";
+import { formValidationSignIn } from "../components/static/logic/logic";
 // import { auth } from "../config/firebase.js";
 // import { signInWithEmailAndPassword } from "firebase/auth";
 
@@ -22,7 +22,7 @@ export default function SignIn() {
       setLoginUser(user);
       router("/");
     } catch (error) {
-      console.log(error);
+      console.log("error");
     }
   };
 
