@@ -112,7 +112,7 @@ export default function SearchModal({ onClick, onCancel }) {
     } else if (keyword.trim()) {
       onClick();
       console.log(url);
-      router.push("/news/search-results");
+      // router.push("/news/search-results");
     } else
       (error) => {
         console.log("error");

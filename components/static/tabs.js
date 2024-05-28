@@ -43,7 +43,7 @@ export default function Tabs({ currentDisplay }) {
           </li>
 
           <li className='sidebar-item'>
-            <Link className='sidebar-link' href='/portal/search-modal'>
+            <Link className='sidebar-link' href=''>
               <div className='sidebar-icon'>
                 <span className='sidebar-icon-custom'>
                   <SlCalender color='white' />
