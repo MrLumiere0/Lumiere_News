@@ -3,14 +3,16 @@ import MainListItem from "./main-list-item";
 import { useEffect, useState } from "react";
 
 export default function MainList() {
+  const [searchURL, setSearchURL] = useState(
+    "    https://newsapi.org/v2/everything?q=stock&pageSize=50&apiKey=4db170d9535f4dccad0bbd35c58dc6b9"
+  );
   const [mainNews, setMainNews] = useState([]);
-
-  const url =
-    "https://newsapi.org/v2/everything?q=economic&pageSize=7&apiKey=4db170d9535f4dccad0bbd35c58dc6b9";
+  const url = { searchURL };
 
   useEffect(() => {
     const fetchMainNews = async () => {
       try {
+        // set back to searchURL instead of url when done w modal
         const response = await fetch(url);
         const data = await response.json();
         // console.log(data.articles);

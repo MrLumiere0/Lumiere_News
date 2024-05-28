@@ -6,8 +6,23 @@ import styles from "../../styles/headline.module.css";
 import Article from "../../components/custom-components.js/article/section";
 import LatestNews from "../../components/custom-components.js/latest/latest";
 import SavedNews from "../../components/custom-components.js/article/saved-sec";
+import SearchModal from "./portal/search-modal";
+import { useState } from "react";
+import { useEffect } from "react";
+import { createPortal } from "react-dom";
 
 export default function HeadlineNews() {
+  const [modalOpen, setModalOpen] = useState(false);
+  const [searchResult, setSearchResult] = useState("");
+  const handleCancelBtn = (value) => {
+    setModalOpen(false);
+    setSearchResult(value);
+  };
+  const handleSubmitBtn = (value) => {
+    setModalOpen(false);
+    setSearchResult(value);
+  };
+
   return (
     <div className={styles.Headlines}>
       <>
@@ -18,11 +33,12 @@ export default function HeadlineNews() {
       </>
       <nav className={styles.headlineNav}>
         <div className={styles.headlineNavSearch}>
-          <input
-            type='text'
-            placeholder='Search headlines...'
+          <button
             className={styles.headlineSearchInput}
-          />
+            onClick={() => setModalOpen(true)}
+          >
+            Search Headlines
+          </button>
         </div>
 
         <div className={styles.headlineNavCategories}>
@@ -43,13 +59,20 @@ export default function HeadlineNews() {
             <Link href='' className={styles.headlineLink}>
               <li className={styles.headlineCategory}>Cryptocurrency</li>
             </Link>
-
-            {/* <li className='headline-category'>Tech</li> */}
           </ul>
         </div>
       </nav>
 
       <div className={styles.NewsBanners}>
+        {/* {searchResult} */}
+        {modalOpen &&
+          createPortal(
+            <SearchModal
+              onClick={handleSubmitBtn}
+              onCancel={handleCancelBtn}
+            />,
+            document.body
+          )}
         <div className={styles.News}>
           <div className={styles.customNewsFeed}>
             <div className={styles.customNewsMain}>

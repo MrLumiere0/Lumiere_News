@@ -3,16 +3,19 @@ import { useEffect, useState } from "react";
 import SectionListItem from "./section-list-item";
 
 export default function Article() {
+  const [searchURL, setSearchURL] = useState(
+    "    https://newsapi.org/v2/everything?q=stock&pageSize=50&apiKey=4db170d9535f4dccad0bbd35c58dc6b9"
+  );
   const [sectNews, setSectNews] = useState([]);
 
-  const url =
-    "https://newsapi.org/v2/everything?q=stock&pageSize=50&apiKey=4db170d9535f4dccad0bbd35c58dc6b9";
-
+  const url = { searchURL };
   //     "https://newsapi.org/v2/everything?q=stock%market&apiKey=4db170d9535f4dccad0bbd35c58dc6b9";
   //
   useEffect(() => {
     const fetchSecNews = async () => {
       try {
+        // set back to searchURL instead of url when done w modal
+
         const response = await fetch(url);
         const data = await response.json();
         setSectNews(data.articles);

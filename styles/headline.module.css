@@ -37,18 +37,19 @@
   background-color: var(--homepage-main);
   border: none;
   border-bottom: white 1px solid;
+  color: white;
 }
 
-.headlineSearchInput::placeholder {
+/* .headlineSearchInput::placeholder {
   color: var(--homepage-secondary);
-}
+} */
 
-.headlineSearchInput:focus {
+/* .headlineSearchInput:focus {
   background-color: white;
   transition: ease-in 0.5s;
   color: var(--homepage-main);
-}
-
+} */
+/*
 .headlineSearchInput:hover {
   background-color: white;
   transition: ease-in 0.5s;
@@ -58,7 +59,7 @@
 .headlineSearchInput:hover::placeholder {
   transition: ease-out 0.5s;
   color: var(--homepage-main);
-}
+} */
 
 .headlineNavCategories {
   grid-column: 2 / 3;

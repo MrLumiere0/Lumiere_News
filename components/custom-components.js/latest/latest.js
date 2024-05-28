@@ -3,14 +3,18 @@ import { useEffect, useState } from "react";
 import ListItem from "./latest-list-item";
 
 export default function LatestNews() {
+  const [searchURL, setSearchURL] = useState(
+    "    https://newsapi.org/v2/everything?q=stock&pageSize=50&apiKey=4db170d9535f4dccad0bbd35c58dc6b9"
+  );
   const [latestNews, setLatestNews] = useState([]);
 
-  const url =
-    "https://newsapi.org/v2/top-headlines?country=us&category=general&pageSize=50&apiKey=4db170d9535f4dccad0bbd35c58dc6b9";
+  const url = { searchURL };
 
   useEffect(() => {
     const fetchLatestNews = async () => {
       try {
+        // set back to searchURL instead of url when done w modal
+
         const response = await fetch(url);
         const data = await response.json();
         setLatestNews(data.articles);
