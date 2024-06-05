@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { useState } from "react";
 import { useRouter } from "next/router";
 import styles from "../styles/sign-in.module.css";
-import { sideBarFontLogo } from "../components/utils/font";
+import { sideBarFontLogo } from "../styles/utils/font";
 import { formValidationSignIn } from "../components/static/logic/logic";
 // import { auth } from "../config/firebase.js";
 // import { signInWithEmailAndPassword } from "firebase/auth";

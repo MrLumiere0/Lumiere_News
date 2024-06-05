@@ -1,6 +1,6 @@
 import React from "react";
-import { bannerFont } from "../components/utils/font";
 import styles from "../styles/homepage.module.css";
+import { sideBarFontLogo } from "../styles/utils/font";
 
 export default function Home() {
   return (
@@ -13,9 +13,11 @@ export default function Home() {
         muted
       />
       <div className={styles.banner}>
-        <h2 id={styles.Lumiere}>Lumiere News</h2>
+        <h2 id={styles.Lumiere} className={sideBarFontLogo.className}>
+          Lumiere News
+        </h2>
 
-        <h3 id={styles.bannerSubheading} className={bannerFont.className}>
+        <h3 id={styles.bannerSubheading} /*className={bannerFont.className}*/>
           What&apos;s happening
           <span className={styles.bannerSubheadingToday}> today?</span>
         </h3>

@@ -29,6 +29,8 @@
   border: none;
   background-color: black;
   color: white;
+  border: 1px solid white;
+  padding-left: 1rem;
 }
 
 .keyword::placeholder {
@@ -92,10 +94,18 @@
   color: black;
 }
 
+.buttonCancel:hover {
+  cursor: pointer;
+}
+
 .buttonSubmit {
   font-size: 1rem;
   width: 5rem;
   border: none;
   background-color: var(--homepage-tertiary);
   color: white;
+}
+
+.buttonSubmit:hover {
+  cursor: pointer;
 }

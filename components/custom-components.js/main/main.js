@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 
 export default function MainList() {
   const [searchURL, setSearchURL] = useState(
-    "    https://newsapi.org/v2/everything?q=stock&pageSize=50&apiKey=4db170d9535f4dccad0bbd35c58dc6b9"
+    "https://newsapi.org/v2/everything?q=economics&sortBy=publishedAt&apiKey=4db170d9535f4dccad0bbd35c58dc6b9"
   );
   const [mainNews, setMainNews] = useState([]);
   const url = { searchURL };

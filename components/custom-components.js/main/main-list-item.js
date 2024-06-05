@@ -1,5 +1,4 @@
 import styles from "../../../styles/customNews.module.css";
-import Image from "next/image";
 import { FaRegBookmark } from "react-icons/fa6";
 import { FaBookmark } from "react-icons/fa";
 import { SlCalender } from "react-icons/sl";

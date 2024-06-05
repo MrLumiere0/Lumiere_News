@@ -2,7 +2,7 @@ import React, { use, useContext } from "react";
 import { useState } from "react";
 import { useRouter } from "next/router";
 import styles from "../styles/sign-up.module.css";
-import { sideBarFontLogo } from "../components/utils/font";
+import { sideBarFontLogo } from "../styles/utils/font";
 import formValidationSignUp from "../components/static/logic/logic";
 // import { auth } from "../config/firebase.js";
 

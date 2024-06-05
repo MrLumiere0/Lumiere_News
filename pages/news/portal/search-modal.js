@@ -96,7 +96,7 @@ export default function SearchModal({ onClick, onCancel }) {
 
       update();
       // console.log(keyword);
-      // console.log(url);
+      console.log(url);
     };
     updateURL();
   }),
@@ -120,12 +120,6 @@ export default function SearchModal({ onClick, onCancel }) {
   };
 
   return (
-    // Click on outside of form to exit out of modal, trouble targeting class modal
-    // onClick={(e) => {
-    //   if (e.target.className === "modal") {
-    //     onCancel;
-    //   }
-    // }}
     <div className={styles.modal}>
       <form className={styles.form} onSubmit={submitForm}>
         <input
@@ -167,10 +161,10 @@ export default function SearchModal({ onClick, onCancel }) {
             className={styles.select}
             onChange={(e) => handleSelectOptions(e.target.value)}
           >
-            <option value=''>Optional</option>
+            {/* <option value=''>Optional</option> */}
+            <option value='publishedAt'>Newest</option>
             <option value='relevancy'>Relevancy</option>
             <option value='popularity'>Popularity</option>
-            <option value='publishedAt'>Newest</option>
           </select>
         </div>
 
