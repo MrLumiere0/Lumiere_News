@@ -4,6 +4,7 @@
   box-sizing: border-box;
   padding: 1rem;
   position: relative;
+  overflow: scroll;
 }
 
 .mainHeader {
@@ -28,22 +29,22 @@
 }
 
 .mainFeed {
-  height: 95%;
+  height: 100%;
   width: 100%;
 }
 
 .mainList {
   width: 100%;
   min-width: 315px;
-  height: 700px;
+  height: 100%;
   list-style: none;
   color: white;
-  overflow: hidden;
+  overflow: scroll;
   overflow-y: scroll;
 }
 
 .mainHeadline {
-  height: 100px;
+  height: 95px;
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -55,12 +56,12 @@
 }
 
 .mainHeadline:hover {
-  cursor: pointer;
+  /* cursor: pointer; */
   background-color: white;
   color: black;
 }
 .mainCardDetails {
-  width: 100%;
+  width: 75%;
   height: 100%;
   display: flex;
   flex-wrap: nowrap;
@@ -118,19 +119,17 @@
 
 .mainCardSource {
   width: 25%;
-  max-width: 120px;
-
   height: 100%;
   font-size: 0.9rem;
+  overflow-y: hidden;
 }
 
 .mainSource {
   width: 100%;
-  height: 80%;
+  height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
-  padding-bottom: 1rem;
+  justify-content: space-between;
   text-wrap: nowrap;
   font-size: 1.1rem;
 }
@@ -139,22 +138,34 @@
   width: 100%;
   height: auto;
   color: white;
-  text-wrap: wrap;
   text-overflow: hidden;
 }
 
 .mainSourceDate {
   color: var(--homepage-tertiary);
+  /* color: white; */
 }
 .mainSourceCalender {
   margin-right: 1rem;
 }
 
-.mainFeature {
+/* .mainFeature {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   color: var(--homepage-tertiary);
+} */
+
+.viewButton {
+  width: 100%;
+  font-size: 0.9rem;
+  font-weight: 200;
+  height: 1.2rem;
+  background-color: var(--homepage-tertiary);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 .keyword {
@@ -227,9 +238,15 @@
   display: flex;
   justify-content: space-between;
   padding: 0.5rem;
+  color: white;
   /* border-bottom: 1px solid rgb(255, 255, 255, 0.675); */
 }
 
+.articleHeadline:hover {
+  /* cursor: pointer; */
+  background-color: white;
+  color: black;
+}
 .articleCardDetails {
   width: 70%;
   height: 100%;
@@ -261,7 +278,8 @@
 .articleCardSource {
   width: 25%;
   height: 100%;
-  font-size: 0.9rem;
+  font-size: 1rem;
+  overflow-y: hidden;
 }
 
 .articleSource {
@@ -271,19 +289,22 @@
   flex-direction: column;
   justify-content: space-between;
   padding-bottom: 1rem;
-  color: var(--homepage-tertiary);
   text-wrap: nowrap;
 }
 
 .articleSourceName {
   width: 100%;
   height: auto;
-  color: white;
+  text-overflow: hidden;
 }
 
-.articleSourceCalender {
-  margin-right: 0.5rem;
+.articleSourceDate {
+  color: var(--homepage-tertiary);
 }
+
+/* .articleSourceCalender {
+  margin-right: 0.5rem;
+} */
 
 .articleFeature {
   color: var(--homepage-tertiary);
@@ -429,6 +450,7 @@
   border-bottom: 1px solid rgb(255, 255, 255, 0.675);
   color: white;
   padding-bottom: 0.5rem;
+  z-index: 1;
 }
 
 #latestNewsExpand {
@@ -464,12 +486,12 @@
   min-width: 330px;
   height: 100%;
   list-style: none;
-  overflow: hidden;
-  overflow-y: scroll;
+  overflow: scroll;
+  color: white;
 }
 
 .latestHeadline {
-  height: 100px;
+  height: 95px;
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -507,21 +529,20 @@
   width: 30%;
   height: 100%;
   font-size: 0.9rem;
+  overflow-y: hidden;
 }
 
 .latestSource {
   width: 100%;
-  height: 80%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding-bottom: 1rem;
 }
 
 .latestSourceName {
   width: 100%;
-  height: 25px;
-  color: white;
+  height: auto;
   text-wrap: nowrap;
   text-overflow: ellipsis;
 }

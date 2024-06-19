@@ -2,11 +2,8 @@ import "../styles/globals.scss";
 import Navigation from "../components/static/navigation";
 import Tabs from "../components/static/tabs";
 import Head from "next/head";
-import { sideBarFont } from "../styles/utils/font";
-
+import SearchContext from "../components/static/logic/search-context";
 export default function App({ Component, pageProps }) {
-  console.log({ Component });
-
   return (
     <div className='App'>
       <>
@@ -22,7 +19,9 @@ export default function App({ Component, pageProps }) {
 
         <div className='main-banner-homepage'>
           <Navigation />
-          <Component {...pageProps} />
+          <SearchContext>
+            <Component {...pageProps} />
+          </SearchContext>
         </div>
       </div>
     </div>

@@ -20,24 +20,24 @@ export default function ResultListItem() {
             metus mi. Maecenas at urna ullamcorper, posuere.
           </h2>
         </div>
+      </div>
 
-        <div className={styles.resultImage}>
-          <img className={styles.resultDynamicImage} src='' />
-        </div>
+      <div className={styles.resultImage}>
+        <img className={styles.resultDynamicImage} src='' />
       </div>
 
       <div className={styles.resultCardSource}>
         <div className={styles.resultSource}>
-          <span className={styles.resultSourceName}>Source Name</span>
-
-          <span className={styles.resultSourceCalender}>
-            <SlCalender />
+          <div className={styles.nameContainer}>
+            <span className={styles.resultSourceName}>Source Name</span>
+          </div>
+          <div className={styles.Save}>
             <span className={styles.resultSourceDate}>Date</span>
-          </span>
 
-          <span className={styles.resultFeature}>
-            <FaRegBookmark />
-          </span>
+            <span className={styles.resultFeature}>
+              <FaRegBookmark />
+            </span>
+          </div>
         </div>
       </div>
     </li>

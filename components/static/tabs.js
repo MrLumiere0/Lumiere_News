@@ -48,7 +48,7 @@ export default function Tabs({ currentDisplay }) {
                 <span className='sidebar-icon-custom'>
                   <SlCalender color='white' />
                 </span>
-                <span className='sidebar-description'>Economic Release</span>
+                <span className='sidebar-description'>Economic Releases</span>
               </div>
             </Link>
           </li>
@@ -59,7 +59,7 @@ export default function Tabs({ currentDisplay }) {
                 <span className='sidebar-icon-custom'>
                   <MdShowChart color='white' />
                 </span>
-                <span className='sidebar-description'> Live Charts</span>
+                <span className='sidebar-description'> Lumiere Trading</span>
               </div>
             </Link>
           </li>

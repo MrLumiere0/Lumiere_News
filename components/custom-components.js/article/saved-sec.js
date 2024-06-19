@@ -4,7 +4,7 @@ export default function SavedNews() {
   return (
     <div className={styles.saved}>
       <div className={styles.savedHeader}>
-        <h2 className={styles.savedHeading}>Saved Articles</h2>
+        <h2 className={styles.savedHeading}>Saved Searches</h2>
         <button className={styles.savedButton}>Expand</button>
       </div>
       <div className={styles.savedFeed}>

@@ -14,12 +14,12 @@ export default function Navigation() {
           placeholder='Search the website...'
           className='main-search'
         /> */}
-
+        {/* 
         <Link href='' className='feature'>
           <div className='action-button'>
             <span className='action'>Features / Pricing</span>
           </div>
-        </Link>
+        </Link> */}
 
         <Link href='/sign-up' className='action-link'>
           <div className='action-button'>

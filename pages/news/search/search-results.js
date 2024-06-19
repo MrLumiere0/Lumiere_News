@@ -62,6 +62,22 @@ export default function SearchResults() {
           <div className={styles.resultsFeed}>
             <ul className={styles.resultsList}>
               <ResultListItem />
+              <ResultListItem />
+              <ResultListItem />
+              <ResultListItem />
+              <ResultListItem />
+              <ResultListItem />
+              <ResultListItem />
+
+              <ResultListItem />
+              <ResultListItem />
+              <ResultListItem />
+              <ResultListItem />
+              <ResultListItem />
+              <ResultListItem />
+              <ResultListItem />
+              <ResultListItem />
+              <ResultListItem />
             </ul>
           </div>
         </div>

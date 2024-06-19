@@ -4,7 +4,7 @@ import SectionListItem from "./section-list-item";
 
 export default function Article() {
   const [searchURL, setSearchURL] = useState(
-    "    https://newsapi.org/v2/everything?q=stock&pageSize=50&apiKey=4db170d9535f4dccad0bbd35c58dc6b9"
+    "    https://newsapi.org/v2/top-headlines?country=us&category=technology&pageSize=100&apiKey=4db170d9535f4dccad0bbd35c58dc6b9"
   );
   const [sectNews, setSectNews] = useState([]);
 
@@ -16,7 +16,7 @@ export default function Article() {
       try {
         // set back to searchURL instead of url when done w modal
 
-        const response = await fetch(url);
+        const response = await fetch(searchURL);
         const data = await response.json();
         setSectNews(data.articles);
       } catch (err) {
@@ -30,7 +30,7 @@ export default function Article() {
   return (
     <div className={styles.article}>
       <div className={styles.articleHeader}>
-        <h2 className={styles.articleKeyword}>#Stock</h2>
+        <h2 className={styles.articleKeyword}>#Technology</h2>
         <button className={styles.articleButton}>Expand</button>
       </div>
       <div className={styles.articleFeed}>

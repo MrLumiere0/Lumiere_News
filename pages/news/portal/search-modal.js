@@ -1,12 +1,14 @@
+import styles from "../../../styles/modal.module.css";
 import { DateRange } from "react-date-range";
 import { format } from "date-fns";
-import styles from "../../../styles/modal.module.css";
+import { SlCalender } from "react-icons/sl";
 import "react-date-range/dist/styles.css";
 import "react-date-range/dist/theme/default.css";
 import { useState } from "react";
 import { useEffect } from "react";
 import { useRouter } from "next/navigation";
-import { SlCalender } from "react-icons/sl";
+import { SearchResult } from "../../../components/static/logic/search-context";
+import { useContext } from "react";
 
 export default function SearchModal({ onClick, onCancel }) {
   const router = useRouter();
@@ -50,30 +52,32 @@ export default function SearchModal({ onClick, onCancel }) {
   };
 
   //  url
-  const [url, SetUrl] = useState(
-    "https://newsapi.org/v2/everything?" +
-      "q=" +
-      keyword +
-      "&" +
-      `${
-        isRangeSelected
-          ? "from=" +
-            `${format(range.startDate, "yyyy-MM-dd")}` +
-            "&" +
-            "to=" +
-            `${format(range.endDate, "yyyy-MM-dd")}`
-          : ""
-      }` +
-      "sortBy=" +
-      selectedOptions +
-      "&" +
-      "apiKey=4db170d9535f4dccad0bbd35c58dc6b9"
-  );
+  // const [url, SetUrl] = useState(
+  //   "https://newsapi.org/v2/everything?" +
+  //     "q=" +
+  //     keyword +
+  //     "&" +
+  //     `${
+  //       isRangeSelected
+  //         ? "from=" +
+  //           `${format(range.startDate, "yyyy-MM-dd")}` +
+  //           "&" +
+  //           "to=" +
+  //           `${format(range.endDate, "yyyy-MM-dd")}`
+  //         : ""
+  //     }` +
+  //     "sortBy=" +
+  //     selectedOptions +
+  //     "&" +
+  //     "apiKey=4db170d9535f4dccad0bbd35c58dc6b9"
+  // );
+
+  const { searchUrl, setSearchUrl } = useContext(SearchResult);
 
   useEffect(() => {
     const updateURL = () => {
       const update = () => {
-        SetUrl(
+        setSearchUrl(
           "https://newsapi.org/v2/everything?" +
             "q=" +
             keyword +
@@ -96,7 +100,7 @@ export default function SearchModal({ onClick, onCancel }) {
 
       update();
       // console.log(keyword);
-      console.log(url);
+      console.log(searchUrl);
     };
     updateURL();
   }),
@@ -111,7 +115,7 @@ export default function SearchModal({ onClick, onCancel }) {
       setErrors(validationErrors);
     } else if (keyword.trim()) {
       onClick();
-      console.log(url);
+      console.log(searchUrl);
       // router.push("/news/search-results");
     } else
       (error) => {

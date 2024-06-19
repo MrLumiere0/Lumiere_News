@@ -7,6 +7,10 @@ export default function SectionListItem({ ...headline }) {
   let date = headline.publishedAt;
   date = date.substr(0, 10);
 
+  function viewArticle(url) {
+    console.log(url);
+    window.open(url, "_blank");
+  }
   return (
     <li className={styles.articleHeadline}>
       <div className={styles.articleCardDetails}>
@@ -20,14 +24,15 @@ export default function SectionListItem({ ...headline }) {
       <div className={styles.articleCardSource}>
         <div className={styles.articleSource}>
           <p className={styles.articleSourceName}>{headline.source.name}</p>
-          <p className={styles.articleSourceDate}>
-            <span className={styles.articleSourceCalender}>
-              <SlCalender />
-            </span>
-            {date}
-          </p>
+          <p className={styles.articleSourceDate}>{date}</p>
           <div className={styles.articleFeature}>
-            <FaRegBookmark />
+            <button
+              onClick={(e) => viewArticle(e.target.value)}
+              value={headline.url}
+              className={styles.viewButton}
+            >
+              View
+            </button>
           </div>
         </div>
       </div>

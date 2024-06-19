@@ -8,6 +8,11 @@ export default function ListItem({ ...headline }) {
   let date = headline.publishedAt;
   date = date.substr(0, 10);
 
+  function viewArticle(url) {
+    console.log(url);
+    window.open(url, "_blank");
+  }
+
   return (
     <li className={styles.latestHeadline}>
       <div className={styles.latestCardDetails}>
@@ -18,16 +23,17 @@ export default function ListItem({ ...headline }) {
       <div className={styles.latestCardSource}>
         <div className={styles.latestSource}>
           <p className={styles.latestSourceName}>{headline.source.name}</p>
-          <p className={styles.latestSourceDate}>
-            <span className={styles.latestSourceCalender}>
-              <SlCalender />
-            </span>
-            {date}
-          </p>
-        </div>
+          <p className={styles.latestSourceDate}>{date}</p>
 
-        <div className={styles.latestFeature}>
-          <FaRegBookmark />
+          <div className={styles.latestFeature}>
+            <button
+              onClick={(e) => viewArticle(e.target.value)}
+              value={headline.url}
+              className={styles.viewButton}
+            >
+              View
+            </button>
+          </div>
         </div>
       </div>
     </li>
