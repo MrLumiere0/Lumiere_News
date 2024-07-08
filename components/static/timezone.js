@@ -85,7 +85,7 @@ export default function TimeZone() {
   return (
     <div className='timezone-main'>
       <div className='time-zones'>
-        <h2 id='timezone'>NY</h2>
+        <h2 id='timezone'>New York</h2>
         <h2 id='NY-timezone-time'>{NY}</h2>
       </div>
 

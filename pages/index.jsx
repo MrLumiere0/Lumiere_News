@@ -4,13 +4,14 @@ import { sideBarFontLogo } from "../styles/utils/font";
 
 export default function Home() {
   return (
-    <div className='homepage'>
+    <div className='home'>
       <video
-        className={styles.lumiereBanner}
+        className={styles.video}
         src={require("../public/src/wavey.mp4")}
         autoPlay
         loop
         muted
+        width={100}
       />
       <div className={styles.banner}>
         <h2 id={styles.Lumiere} className={sideBarFontLogo.className}>

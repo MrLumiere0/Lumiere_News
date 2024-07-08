@@ -12,15 +12,17 @@ export default function App({ Component, pageProps }) {
         </Head>
       </>
 
-      <div id='home-index'>
+      <div id='View'>
         <div className='side-banner'>
           <Tabs currentDisplay={Component} />
         </div>
 
-        <div className='main-banner-homepage'>
+        <div className='main-display'>
           <Navigation />
           <SearchContext>
-            <Component {...pageProps} />
+            <div className='display'>
+              <Component {...pageProps} />
+            </div>
           </SearchContext>
         </div>
       </div>

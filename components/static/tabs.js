@@ -34,9 +34,9 @@ export default function Tabs({ currentDisplay }) {
               prefetch={true}
             >
               <div className='sidebar-icon'>
-                <span className='sidebar-icon-custom'>
+                {/* <span className='sidebar-icon-custom'>
                   <ImNewspaper color='white' />
-                </span>
+                </span> */}
                 <span className='sidebar-description'>Headline News</span>
               </div>
             </Link>
@@ -45,9 +45,9 @@ export default function Tabs({ currentDisplay }) {
           <li className='sidebar-item'>
             <Link className='sidebar-link' href=''>
               <div className='sidebar-icon'>
-                <span className='sidebar-icon-custom'>
+                {/* <span className='sidebar-icon-custom'>
                   <SlCalender color='white' />
-                </span>
+                </span> */}
                 <span className='sidebar-description'>Economic Releases</span>
               </div>
             </Link>
@@ -56,9 +56,9 @@ export default function Tabs({ currentDisplay }) {
           <li className='sidebar-item'>
             <Link className='sidebar-link' href=''>
               <div className='sidebar-icon'>
-                <span className='sidebar-icon-custom'>
+                {/* <span className='sidebar-icon-custom'>
                   <MdShowChart color='white' />
-                </span>
+                </span> */}
                 <span className='sidebar-description'> Lumiere Trading</span>
               </div>
             </Link>

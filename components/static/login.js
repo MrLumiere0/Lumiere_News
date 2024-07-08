@@ -5,9 +5,9 @@ import Link from "next/link";
 export default function Login() {
   return (
     <>
-      <div className='sb-login'>
-        <ul id='sidebar-login'>
-          <li className='sidebar-login-item'>
+      <div id='sb-login'>
+        <ul id='login-list'>
+          <li className='login-list-item'>
             <Link className='sidebar-link' href='/sign-in'>
               <div className='sidebar-icon'>
                 <span className='login-icon'>
