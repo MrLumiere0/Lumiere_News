@@ -13,8 +13,14 @@ import { useContext } from "react";
 export default function SearchModal({ onClick, onCancel }) {
   const router = useRouter();
 
+  const { searchUrl, setSearchUrl } = useContext(SearchResult);
+  const { sort, setSort } = useContext(SearchResult);
+  const { keyword, setKeyword } = useContext(SearchResult);
+  const { date, setDate } = useContext(SearchResult);
+  const { selectedOption, setSelectedOption } = useContext(SearchResult);
+
   // keyword State and logic
-  const [keyword, setKeyword] = useState("");
+  // const [keyword, setKeyword] = useState("");
   const [errors, setErrors] = useState({});
 
   const handleNewKeyword = (input) => {
@@ -35,8 +41,12 @@ export default function SearchModal({ onClick, onCancel }) {
   const [isRangeSelected, setIsRangeSelected] = useState(false);
 
   const handleRangeChange = (ranges) => {
-    setRange(ranges.selection);
-    setIsRangeSelected(true);
+    try {
+      setRange(ranges.selection);
+      setIsRangeSelected(true);
+    } catch {
+      console.log("Could not get date");
+    }
   };
 
   const handleShowRangeClick = () => {
@@ -45,10 +55,14 @@ export default function SearchModal({ onClick, onCancel }) {
 
   // Select/Options State and Logic
 
-  const [selectedOptions, setSelectedOptions] = useState("publishedAt");
+  // const [selectedOptions, setSelectedOptions] = useState("publishedAt");
 
   const handleSelectOptions = (option) => {
-    setSelectedOptions(option);
+    // setSelectedOption(option.value);
+    // setSort(option.name);
+    setSelectedOption(option);
+    // console.log(sort);
+    console.log(option);
   };
 
   //  url
@@ -72,8 +86,6 @@ export default function SearchModal({ onClick, onCancel }) {
   //     "apiKey=4db170d9535f4dccad0bbd35c58dc6b9"
   // );
 
-  const { searchUrl, setSearchUrl } = useContext(SearchResult);
-
   useEffect(() => {
     const updateURL = () => {
       const update = () => {
@@ -85,22 +97,21 @@ export default function SearchModal({ onClick, onCancel }) {
             `${
               isRangeSelected
                 ? "from=" +
-                  `${format(range.startDate, "yyyy-MM-dd")}` +
+                  `${format(date.startDate, "yyyy-MM-dd")}` +
                   "&" +
                   "to=" +
-                  `${format(range.endDate, "yyyy-MM-dd")}`
+                  `${format(date.endDate, "yyyy-MM-dd")}`
                 : ""
             }` +
             "sortBy=" +
-            selectedOptions +
+            selectedOption +
             "&" +
             "apiKey=4db170d9535f4dccad0bbd35c58dc6b9"
         );
+        setDate(range);
+        console.log(searchUrl);
       };
-
       update();
-      // console.log(keyword);
-      console.log(searchUrl);
     };
     updateURL();
   }),
@@ -115,8 +126,7 @@ export default function SearchModal({ onClick, onCancel }) {
       setErrors(validationErrors);
     } else if (keyword.trim()) {
       onClick();
-      console.log(searchUrl);
-      // router.push("/news/search-results");
+      router.push("/news/search/results");
     } else
       (error) => {
         console.log("error");
@@ -129,7 +139,7 @@ export default function SearchModal({ onClick, onCancel }) {
         <input
           type='keyword'
           placeholder='Search headlines...'
-          onChange={(e) => handleNewKeyword(e.target.value)}
+          onChange={(e) => handleNewKeyword(e.target)}
           className={styles.keyword}
           autoFocus
         />
@@ -163,12 +173,18 @@ export default function SearchModal({ onClick, onCancel }) {
           <select
             name='sort'
             className={styles.select}
-            onChange={(e) => handleSelectOptions(e.target.value)}
+            onChange={(e) => handleSelectOptions(e.target.value, e.target)}
           >
             {/* <option value=''>Optional</option> */}
-            <option value='publishedAt'>Newest</option>
-            <option value='relevancy'>Relevancy</option>
-            <option value='popularity'>Popularity</option>
+            <option name='Newest' value='publishedAt'>
+              Newest
+            </option>
+            <option name='Relevancy' value='relevancy'>
+              Relevancy
+            </option>
+            <option name='Popularity' value='popularity'>
+              Popularity
+            </option>
           </select>
         </div>
 

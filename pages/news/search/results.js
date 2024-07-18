@@ -1,16 +1,47 @@
 import styles from "../../../styles/searchResults.module.css";
 import ResultListItem from "./search-result-list-item";
+import { useContext } from "react";
+import { useEffect, useState } from "react";
+import { SearchResult } from "../../../components/static/logic/search-context";
+import { format } from "date-fns";
 
 export default function SearchResults() {
+  const { searchUrl } = useContext(SearchResult);
+  const { keyword } = useContext(SearchResult);
+  const { date } = useContext(SearchResult);
+  const { selectedOptions } = useContext(SearchResult);
+  const [resultData, setResultData] = useState([]);
+
+  useEffect(() => {
+    const fetchSearchResults = async () => {
+      try {
+        const response = await fetch(searchUrl);
+        const data = await response.json();
+        console.log(data.articles);
+        setResultData(data.articles);
+      } catch (err) {
+        console.log("error");
+      }
+    };
+
+    fetchSearchResults();
+  }, []);
+
   return (
     <div id={styles.searchResults}>
       <div className={styles.searchResultsHeader}>
         <div className={styles.result}>
           <h2 id={styles.resultsFor}>Results for:</h2>
           <div className={styles.resultItems}>
-            <h2>#Keyword</h2>
-            <h2>Date</h2> {/* will have an && for conditional rendering */}
-            <h2>Sorted By:</h2> {/*will default to publishedAt or if selected*/}
+            <h2>{keyword}</h2>
+            <h2>
+              Date: {""}
+              {format(date.startDate, "MM-dd-yyyy")} to{" "}
+              {format(date.endDate, "MM-dd-yyyy")}
+            </h2>
+            {/* will have an && for conditional rendering */}
+            <h2>Sorted By: {selectedOptions}</h2>
+            {/*will default to publishedAt or if selected*/}
           </div>
         </div>
       </div>
@@ -61,23 +92,9 @@ export default function SearchResults() {
 
           <div className={styles.resultsFeed}>
             <ul className={styles.resultsList}>
-              <ResultListItem />
-              <ResultListItem />
-              <ResultListItem />
-              <ResultListItem />
-              <ResultListItem />
-              <ResultListItem />
-              <ResultListItem />
-
-              <ResultListItem />
-              <ResultListItem />
-              <ResultListItem />
-              <ResultListItem />
-              <ResultListItem />
-              <ResultListItem />
-              <ResultListItem />
-              <ResultListItem />
-              <ResultListItem />
+              {resultData.map((headline) => (
+                <ResultListItem {...headline} />
+              ))}
             </ul>
           </div>
         </div>
