@@ -1,15 +1,16 @@
 import React from "react";
-import { SlCalender } from "react-icons/sl";
-import { ImNewspaper } from "react-icons/im";
-import { MdShowChart } from "react-icons/md";
+
 import Link from "next/link";
 
 import Login from "./login";
+import { FaRegNewspaper } from "react-icons/fa6";
+import { SlCalender } from "react-icons/sl";
+import { AiOutlineStock } from "react-icons/ai";
 
 export default function Tabs({ currentDisplay }) {
   return (
     <aside className='sidebar '>
-      <div className='logo-video'>
+      {/* <div className='logo-video'>
         {currentDisplay.name == "Home" || "SignIn" ? (
           <div className='logo-video'> </div>
         ) : (
@@ -23,7 +24,7 @@ export default function Tabs({ currentDisplay }) {
             />
           </Link>
         )}
-      </div>
+      </div> */}
 
       <div className='sidebar-main'>
         <ul className='sidebar-list'>
@@ -37,7 +38,9 @@ export default function Tabs({ currentDisplay }) {
                 {/* <span className='sidebar-icon-custom'>
                   <ImNewspaper color='white' />
                 </span> */}
-                <span className='sidebar-description'>Headline News</span>
+                <FaRegNewspaper className='sidebar-description' />
+
+                {/* <span className='sidebar-description'>Headline News</span> */}
               </div>
             </Link>
           </li>
@@ -45,10 +48,13 @@ export default function Tabs({ currentDisplay }) {
           <li className='sidebar-item'>
             <Link className='sidebar-link' href=''>
               <div className='sidebar-icon'>
-                {/* <span className='sidebar-icon-custom'>
+                {/* <span >
                   <SlCalender color='white' />
                 </span> */}
-                <span className='sidebar-description'>Economic Releases</span>
+
+                <SlCalender className='sidebar-description' />
+
+                {/* <span Economic Releases</span> */}
               </div>
             </Link>
           </li>
@@ -59,7 +65,8 @@ export default function Tabs({ currentDisplay }) {
                 {/* <span className='sidebar-icon-custom'>
                   <MdShowChart color='white' />
                 </span> */}
-                <span className='sidebar-description'> Lumiere Trading</span>
+                {/* <span className='sidebar-description'> Lumiere Trading</span> */}
+                <AiOutlineStock className='sidebar-description' />
               </div>
             </Link>
           </li>

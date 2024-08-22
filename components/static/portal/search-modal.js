@@ -7,15 +7,15 @@ import "react-date-range/dist/theme/default.css";
 import { useState } from "react";
 import { useEffect } from "react";
 import { useRouter } from "next/navigation";
-import { SearchResult } from "../../../components/static/logic/search-context";
+import { SearchResult } from "../logic/search-context";
 import { useContext } from "react";
 
 export default function SearchModal({ onClick, onCancel }) {
   const router = useRouter();
 
   const { searchUrl, setSearchUrl } = useContext(SearchResult);
-  const { sort, setSort } = useContext(SearchResult);
-  const { keyword, setKeyword } = useContext(SearchResult);
+  // const { sort, setSort } = useContext(SearchResult);
+  const { searchkeyword, setKeyword } = useContext(SearchResult);
   const { date, setDate } = useContext(SearchResult);
   const { selectedOption, setSelectedOption } = useContext(SearchResult);
 
@@ -25,6 +25,7 @@ export default function SearchModal({ onClick, onCancel }) {
 
   const handleNewKeyword = (input) => {
     try {
+      console.log(input);
       setKeyword(input);
     } catch {
       console.log("error");
@@ -92,7 +93,7 @@ export default function SearchModal({ onClick, onCancel }) {
         setSearchUrl(
           "https://newsapi.org/v2/everything?" +
             "q=" +
-            keyword +
+            searchkeyword +
             "&" +
             `${
               isRangeSelected
@@ -119,12 +120,11 @@ export default function SearchModal({ onClick, onCancel }) {
 
   const submitForm = (event) => {
     event.preventDefault();
-    const validationErrors = {};
 
-    if (!keyword.trim()) {
-      validationErrors.keyword = "Keyword is required";
+    if (!searchkeyword.trim()) {
+      validationErrors.searchkeyword = "Keyword is required";
       setErrors(validationErrors);
-    } else if (keyword.trim()) {
+    } else if (searchkeyword.trim()) {
       onClick();
       router.push("/news/search/results");
     } else
@@ -139,12 +139,12 @@ export default function SearchModal({ onClick, onCancel }) {
         <input
           type='keyword'
           placeholder='Search headlines...'
-          onChange={(e) => handleNewKeyword(e.target)}
+          onChange={(e) => handleNewKeyword(e.target.value)}
           className={styles.keyword}
           autoFocus
         />
-        {errors.keyword && (
-          <span className={styles.error}>{errors.keyword}</span>
+        {errors.searchkeyword && (
+          <span className={styles.error}>{errors.searchkeyword}</span>
         )}
         <p onClick={handleShowRangeClick} className={styles.dateRange}>
           {isRangeSelected ? (
@@ -191,14 +191,14 @@ export default function SearchModal({ onClick, onCancel }) {
         <div className={styles.buttons}>
           <button
             className={styles.buttonCancel}
-            onClick={() => onCancel(keyword)}
+            onClick={() => onCancel(searchkeyword)}
           >
             Cancel
           </button>
           <button
             className={styles.buttonSubmit}
             onSubmit={() => {
-              onClick(keyword);
+              onClick(searchkeyword);
             }}
             type='submit'
           >

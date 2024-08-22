@@ -8,7 +8,7 @@
 
 .mainHeader {
   min-width: 100%;
-  height: 5%;
+  height: 3rem;
   display: flex;
   justify-content: space-between;
   position: relative;
@@ -22,9 +22,10 @@
   width: 4rem;
   height: 2rem;
   background-color: black;
-  border: none;
   color: white;
   font-size: 0.77rem;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 .mainFeed {
@@ -37,9 +38,9 @@
   min-width: 315px;
   height: 100%;
   list-style: none;
-  color: white;
-  overflow: scroll;
-  overflow-y: scroll;
+  color: black;
+  overflow-x: scroll;
+  overflow-y: visible;
 }
 
 .mainHeadline {
@@ -48,11 +49,14 @@
   display: flex;
   justify-content: space-between;
   padding: 0.5rem;
+  /* opacity: 0;
+  pointer-events: none;
+  transform: scale(0.8);
+*/
 }
 
 .mainHeadline:hover {
-  background-color: white;
-  color: black;
+  transform: scale(1.1);
 }
 .mainCardDetails {
   width: 75%;
@@ -80,10 +84,12 @@
   margin-right: 1rem;
   height: 100%;
   margin-left: 1rem;
+  font-size: 0.9rem;
 }
 
 .mainCardTitle {
-  font-size: 1rem;
+  font-size: 0.9rem;
+
   font-weight: 700;
   width: 100%;
   height: 100%;
@@ -94,7 +100,6 @@
   height: 100%;
   width: 100%;
   font-weight: 300;
-  font-size: 1.4rem;
   padding-left: 0.5rem;
   overflow: hidden;
   margin-bottom: 1rem;
@@ -125,7 +130,6 @@
   flex-direction: column;
   justify-content: space-between;
   text-wrap: nowrap;
-  font-size: 1.1rem;
 }
 
 .mainSourceName {
@@ -136,18 +140,17 @@
 }
 
 .mainSourceDate {
-  color: var(--homepage-tertiary);
-  /* color: white; */
+  color: black;
 }
 .mainSourceCalender {
   margin-right: 1rem;
 }
 
 .viewButton {
-  width: 100%;
+  width: 75%;
   font-size: 0.9rem;
   font-weight: 200;
-  height: 1.2rem;
+  height: 1.5rem;
   background-color: var(--homepage-tertiary);
   color: white;
   border: none;
@@ -178,7 +181,7 @@
   display: flex;
   justify-content: space-between;
   position: relative;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
 }
 
 .articleKeyword {
@@ -202,6 +205,8 @@
   border: none;
   color: white;
   font-size: 0.77rem;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 .articleFeed {
@@ -212,9 +217,8 @@
 .articleList {
   width: 100%;
   min-width: 315px;
-  height: 100%;
+  height: 450px;
   list-style: none;
-  color: white;
   overflow: hidden;
   overflow-y: scroll;
 }
@@ -225,14 +229,14 @@
   display: flex;
   justify-content: space-between;
   padding: 0.5rem;
-  color: white;
+  color: black;
   /* border-bottom: 1px solid rgb(255, 255, 255, 0.675); */
 }
 
 .articleHeadline:hover {
-  /* cursor: pointer; */
-  background-color: white;
-  color: black;
+  cursor: pointer;
+  background-color: black;
+  color: white;
 }
 .articleCardDetails {
   width: 70%;
@@ -248,7 +252,8 @@
 }
 
 .articleCardTitle {
-  font-size: 1.1rem;
+  font-size: 1rem;
+
   font-weight: 700;
   width: 100%;
   height: 100%;
@@ -258,7 +263,7 @@
 .articleCardSource {
   width: 25%;
   height: 100%;
-  font-size: 1rem;
+  font-size: 0.9rem;
   overflow-y: hidden;
 }
 
@@ -268,7 +273,6 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding-bottom: 1rem;
   text-wrap: nowrap;
 }
 
@@ -277,10 +281,10 @@
   height: auto;
   text-overflow: hidden;
 }
-
+/* 
 .articleSourceDate {
   color: var(--homepage-tertiary);
-}
+} */
 
 /* .articleSourceCalender {
   margin-right: 0.5rem;
@@ -296,6 +300,7 @@
   box-sizing: border-box;
   padding: 1rem;
   position: relative;
+  align-self: self-end;
 }
 
 .savedHeader {
@@ -318,6 +323,8 @@
   border: none;
   color: white;
   font-size: 0.77rem;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 .savedFeed {
@@ -417,7 +424,6 @@
   width: 100%;
   height: 100%;
   box-sizing: border-box;
-  padding: 1rem;
   position: relative;
 }
 
@@ -429,7 +435,7 @@
 }
 .latestNewsHeader {
   width: 100%;
-  height: 5%;
+  height: 3rem;
   display: flex;
   justify-content: space-between;
   position: relative;
@@ -450,7 +456,7 @@
 
 .latestNewsFeed {
   list-style: none;
-  height: 700px;
+  height: 720px;
   width: 100%;
   min-width: 375px;
   color: white;
@@ -461,10 +467,12 @@
   right: 0;
   width: 4rem;
   height: 2rem;
-  background-color: black;
+  background-color: white;
   border: none;
-  color: white;
+  color: var(--homepage-tertiary);
   font-size: 0.77rem;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 .lastestNewsList {
@@ -474,6 +482,7 @@
   list-style: none;
   overflow: scroll;
   color: white;
+  margin-top: 1rem;
 }
 
 .latestHeadline {
@@ -482,12 +491,14 @@
   display: flex;
   justify-content: space-between;
   padding: 0.5rem;
+  font-size: 1rem;
 }
 
 .latestHeadline:hover {
   cursor: pointer;
   background-color: white;
   color: black;
+  /* transition: background-color 0.3s ease-in; */
 }
 .latestCardDetails {
   width: 65%;
@@ -495,12 +506,11 @@
 }
 
 .latestCardTitle {
-  font-size: 1.15rem;
-  font-weight: 700;
   width: 100%;
   height: 100%;
   overflow: scroll;
   text-wrap: wrap;
+  font-size: 1rem;
 }
 
 .latestCardDescription {
@@ -524,6 +534,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  font-size: 0.9rem;
 }
 
 .latestSourceName {
@@ -533,9 +544,9 @@
   text-overflow: ellipsis;
 }
 
-.latestSourceDate {
+/* .latestSourceDate {
   color: var(--homepage-tertiary);
-}
+} */
 
 .latestSourceCalender {
   margin-right: 1rem;

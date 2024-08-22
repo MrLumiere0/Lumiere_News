@@ -1,10 +1,12 @@
 .signUpPage {
-  position: relative;
-  height: 90vh;
   display: flex;
   justify-content: center;
   margin: auto;
   background-color: black;
+  width: 90vw;
+  height: 90vh;
+  position: absolute;
+  bottom: 0;
 }
 
 .signUpModal {
@@ -16,7 +18,7 @@
   margin: auto;
   display: flex;
   flex-direction: row;
-  background-color: white;
+  background-color: #717171;
   border-radius: 5px;
 }
 
@@ -34,7 +36,7 @@
   margin: auto;
   justify-content: center;
   text-align: center;
-  color: black;
+  color: white;
   font-family: Belleza, sans-serif;
   padding: 2rem;
   padding-top: 5rem;
@@ -50,7 +52,7 @@
   font-size: 2rem;
   width: 100%;
   height: auto;
-  color: black;
+  color: white;
 }
 
 .signUpForm {
@@ -67,9 +69,11 @@
   height: 2.5rem;
   text-align: center;
   cursor: pointer;
-  color: black;
-  background-color: white;
+  color: white;
+  background-color: black;
   border: 1px solid black;
+  border-radius: 5px;
+  border: 1px solid white;
 }
 
 .formbutton {
@@ -81,4 +85,9 @@
   border-radius: 9px;
   cursor: pointer;
   background-color: #0781fe;
+}
+
+.redirectsignin {
+  text-decoration: none;
+  color: white;
 }

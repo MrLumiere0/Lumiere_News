@@ -4,6 +4,7 @@ import { useRouter } from "next/router";
 import styles from "../styles/sign-in.module.css";
 import { sideBarFontLogo } from "../styles/utils/font";
 import { formValidationSignIn } from "../components/static/logic/logic";
+import Link from "next/link";
 // import { auth } from "../config/firebase.js";
 // import { signInWithEmailAndPassword } from "firebase/auth";
 
@@ -40,7 +41,7 @@ export default function SignIn() {
         </div>
         <div className={styles.loginSection}>
           <h2 id={styles.loginHeader} className={sideBarFontLogo.className}>
-            MY ACCOUNT
+            Sign In
           </h2>
           <form className={styles.loginForm} onSubmit={userLogin}>
             <input
@@ -51,6 +52,7 @@ export default function SignIn() {
               onChange={(e) => {
                 setEmail(e.target.value);
               }}
+              autofocus
             ></input>
             {errors.email && <span>{errors.email}</span>}
             <input
@@ -67,6 +69,10 @@ export default function SignIn() {
             <button type='submit' className={styles.formbutton}>
               Enter
             </button>
+
+            <Link className={styles.redirectsignup} href='/sign-up'>
+              <span>Don't have an account?</span>
+            </Link>
           </form>
         </div>
       </div>

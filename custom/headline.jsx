@@ -1,13 +1,27 @@
 import React from "react";
 import Head from "next/head";
+import MainList from "../../components/custom-components.js/main/main";
 import Link from "next/link";
-import styles from "../../../styles/skeleton/headline.module.css";
-import SkeletonMainList from "../componenets/main/main.jsx";
-import SkeletonArticleList from "../componenets/article/article.jsx";
-import SkeletonLatestList from "../componenets/latest/latest.jsx";
-import SkeletonSavedNews from "../componenets/article/saved-sec.jsx";
+import styles from "../../styles/headline.module.css";
+import Article from "../../components/custom-components.js/article/section";
+import LatestNews from "../../components/custom-components.js/latest/latest";
+import SavedNews from "../../components/custom-components.js/article/saved-sec";
+import SearchModal from "./portal/search-modal";
+import { useState } from "react";
+import { createPortal } from "react-dom";
 
-export default function SkeletonHeadlineNews() {
+export default function HeadlineNews() {
+  const [modalOpen, setModalOpen] = useState(false);
+  const [searchResult, setSearchResult] = useState("");
+  const handleCancelBtn = (value) => {
+    setModalOpen(false);
+    setSearchResult(value);
+  };
+  const handleSubmitBtn = (value) => {
+    setModalOpen(false);
+    setSearchResult(value);
+  };
+
   return (
     <div className={styles.Headlines}>
       <>
@@ -18,7 +32,10 @@ export default function SkeletonHeadlineNews() {
       </>
       <nav className={styles.headlineNav}>
         <div className={styles.headlineNavSearch}>
-          <button className={styles.headlineSearchInput}>
+          <button
+            className={styles.headlineSearchInput}
+            onClick={() => setModalOpen(true)}
+          >
             Search Headlines
           </button>
         </div>
@@ -46,24 +63,33 @@ export default function SkeletonHeadlineNews() {
       </nav>
 
       <div className={styles.NewsBanners}>
+        {searchResult}
+        {modalOpen &&
+          createPortal(
+            <SearchModal
+              onClick={handleSubmitBtn}
+              onCancel={handleCancelBtn}
+            />,
+            document.body
+          )}
         <div className={styles.News}>
           <div className={styles.customNewsFeed}>
             <div className={styles.customNewsMain}>
-              <SkeletonMainList />
+              <MainList />
             </div>
 
             <div className={styles.customNewsArticle}>
               <div className={styles.customNewsSec}>
-                <SkeletonArticleList />
+                <Article />
               </div>
               <div className={styles.customSavedNews}>
-                <SkeletonSavedNews />
+                <SavedNews />
               </div>
             </div>
           </div>
 
           <div className={styles.latestNewsFeed}>
-            <SkeletonLatestList />
+            <LatestNews />
           </div>
         </div>
       </div>

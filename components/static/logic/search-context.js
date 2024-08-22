@@ -7,7 +7,7 @@ function SearchContext({ children }) {
   const [searchUrl, setSearchUrl] = useState("");
 
   // keyword State and logic
-  const [keyword, setKeyword] = useState("");
+  const [searchkeyword, setKeyword] = useState("");
 
   // Range state and logic
   const [date, setDate] = useState("");
@@ -20,10 +20,10 @@ function SearchContext({ children }) {
   return (
     <SearchResult.Provider
       value={{
+        searchkeyword,
+        setKeyword,
         searchUrl,
         setSearchUrl,
-        keyword,
-        setKeyword,
         date,
         setDate,
         sort,

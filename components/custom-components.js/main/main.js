@@ -27,7 +27,7 @@ export default function MainList() {
   return (
     <div className={styles.main}>
       <div className={styles.mainHeader}>
-        <h2 className={styles.keyword}>#Finance</h2>
+        <h2 className={styles.keyword}>#Business</h2>
 
         <button className={styles.mainButton}>Expand</button>
       </div>

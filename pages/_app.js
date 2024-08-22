@@ -8,20 +8,21 @@ export default function App({ Component, pageProps }) {
     <div className='App'>
       <>
         <Head>
-          <title>Lumiere News</title>
+          <title>Lumiere Trading</title>
         </Head>
       </>
 
       <div id='View'>
-        <div className='side-banner'>
-          <Tabs currentDisplay={Component} />
-        </div>
-
         <div className='main-display'>
-          <Navigation />
           <SearchContext>
+            <Navigation />
             <div className='display'>
-              <Component {...pageProps} />
+              <div className='side-banner'>
+                <Tabs currentDisplay={Component} />
+              </div>
+              <div className='currentDisplay'>
+                <Component {...pageProps} />
+              </div>
             </div>
           </SearchContext>
         </div>

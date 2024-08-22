@@ -1,113 +1,92 @@
 .Headlines {
-  width: 90vw;
-  height: 90vh;
-  position: absolute;
-  bottom: 0;
+  width: 100%;
+  height: 100%;
+  position: relative;
 }
 
 .headlineNav {
   display: grid;
-  grid-template-columns: 1fr 3fr;
-  grid-template-rows: 3vh;
+  grid-template-columns: 1fr 2fr;
   grid-column-gap: 0px;
   grid-row-gap: 0px;
-  box-shadow: 0px 6px 9px -1px rgba(0, 0, 0, 0.75);
-  width: auto;
-  background-color: var(--homepage-main);
-  height: 10%;
-  z-index: 100;
-}
-
-.headlineNavSearch {
-  grid-column: 1;
-  /* padding: 0.5rem; */
-  height: 100%;
-  z-index: 1;
-  color: var(--homepage-main);
-  min-width: 250px;
-  position: sticky;
-  top: 0;
-}
-
-.headlineSearchInput {
-  height: 100%;
+  /* box-shadow: 0px 6px 9px -1px rgba(0, 0, 0, 0.75); */
   width: 100%;
-  padding-left: 1.5rem;
-  font-size: 1rem;
-  text-align: left;
-  background-color: var(--homepage-main);
-  border: none;
-  border-bottom: white 1px solid;
+  background-color: black;
+  color: white;
+  height: 50px;
+  z-index: 100;
+  padding-bottom: 1rem;
   color: white;
 }
 
-/* .headlineSearchInput::placeholder {
-  color: var(--homepage-secondary);
-} */
-
-/* .headlineSearchInput:focus {
-  background-color: white;
-  transition: ease-in 0.5s;
-  color: var(--homepage-main);
-} */
-/*
-.headlineSearchInput:hover {
-  background-color: white;
-  transition: ease-in 0.5s;
-  color: var(--homepage-main);
-}
-
-.headlineSearchInput:hover::placeholder {
-  transition: ease-out 0.5s;
-  color: var(--homepage-main);
-} */
-
 .headlineNavCategories {
-  grid-column: 2 / 3;
+  grid-column: 2;
   height: 100%;
   width: 100%;
 }
 
 .categoriesList {
-  color: white;
   display: flex;
   justify-content: space-between;
   align-content: center;
   text-align: center;
   list-style: none;
-  padding-left: 2rem;
-  width: auto;
+  width: 100%;
   height: 100%;
+  border-bottom: 1px solid white;
 }
 .headlineLink {
   text-decoration: none;
   color: white;
-  border-radius: 15px;
   width: 100%;
-  height: auto;
-  margin: auto;
+  height: 100%;
+  display: flex;
+}
+
+.headlineLink:hover {
+  transform: translate(0, -0.5rem);
 }
 
 .headlineCategory {
-  font-size: 1.2rem;
+  font-size: 0.95rem;
   font-weight: 300;
   width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-content: flex-end;
+}
+
+.banner {
+  grid-column: 2;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-content: flex-end;
+  text-align: center;
+}
+
+.bannerLumiere {
+  font-size: 1.5rem;
+  font-weight: 550;
+  width: fit-content;
+  border-bottom: 1px solid black;
 }
 
 .NewsBanners {
-  height: 90%;
+  height: 100%;
   width: 100%;
   overflow: hidden;
-  background: rgb(0, 0, 0);
+  background-color: white;
   /* background: linear-gradient(
-    0deg,
-    rgba(0, 0, 0, 1) 0%,
-    rgba(0, 0, 0, 1) 50%,
-    rgba(117, 121, 122, 1) 100%
-  ); */
+      0deg,
+      rgba(0, 0, 0, 1) 0%,
+      rgba(0, 0, 0, 1) 50%,
+      rgba(117, 121, 122, 1) 100%
+    ); */
 
   display: flex;
   justify-content: center;
+  position: relative;
 }
 
 .News {
@@ -115,14 +94,12 @@
   height: 100%;
   display: flex;
   justify-content: space-between;
-  padding: 1rem;
 }
 
 .customNewsFeed {
-  width: 65%;
+  width: 100%;
   min-width: 840px;
   height: 100%;
-  background-color: black;
   padding: 1rem;
   display: flex;
   justify-content: space-between;
@@ -133,15 +110,15 @@
   width: 55%;
   max-height: 100%;
   height: 800px;
-  background-color: black;
   margin-right: 2rem;
+  overflow: hidden;
 }
 
 .customNewsArticle {
   width: 40%;
   max-height: 100%;
   height: 100%;
-  background-color: black;
+  background-color: white;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -160,12 +137,13 @@
 }
 
 .latestNewsFeed {
-  width: 30%;
+  min-width: 35%;
   height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   background-color: black;
   padding: 1rem;
+
   /* border-radius: 10px; */
 }

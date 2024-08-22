@@ -1,31 +1,37 @@
 import React from "react";
 import TimeZone from "./timezone";
-import Link from "next/link";
+import SearchModal from "./portal/search-modal";
+import { useState } from "react";
+import { createPortal } from "react-dom";
 
 export default function Navigation() {
+  const [modalOpen, setModalOpen] = useState(false);
+  const [searchResult, setSearchResult] = useState("");
+  const handleCancelBtn = (value) => {
+    setModalOpen(false);
+    setSearchResult(value);
+  };
+  const handleSubmitBtn = (value) => {
+    setModalOpen(false);
+    setSearchResult(value);
+  };
+
   return (
     <div className='nav'>
+      {modalOpen &&
+        createPortal(
+          <SearchModal onClick={handleSubmitBtn} onCancel={handleCancelBtn} />,
+          document.body
+        )}
       <div className='time-nav'>
         <TimeZone />
       </div>
       <div className='call-to-action'>
-        {/* <input
-          type='text'
-          placeholder='Search the website...'
-          className='main-search'
-        /> */}
-
-        <Link href='' className='feature'>
-          <div className='action-button'>
-            <span className='action'>Features / Pricing</span>
-          </div>
-        </Link>
-
-        <Link href='/sign-up' className='action-link'>
-          <div className='action-button'>
-            <span className='action'>Sign Up</span>
-          </div>
-        </Link>
+        <div className='NavSearch'>
+          <button className='SearchInput' onClick={() => setModalOpen(true)}>
+            Search
+          </button>
+        </div>
       </div>
     </div>
   );

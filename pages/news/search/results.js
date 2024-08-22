@@ -4,6 +4,7 @@ import { useContext } from "react";
 import { useEffect, useState } from "react";
 import { SearchResult } from "../../../components/static/logic/search-context";
 import { format } from "date-fns";
+import { formatDate } from "date-fns";
 
 export default function SearchResults() {
   const { searchUrl } = useContext(SearchResult);
@@ -31,13 +32,15 @@ export default function SearchResults() {
     <div id={styles.searchResults}>
       <div className={styles.searchResultsHeader}>
         <div className={styles.result}>
-          <h2 id={styles.resultsFor}>Results for:</h2>
+          <h2 id={styles.resultsFor}>Results for: </h2>
           <div className={styles.resultItems}>
             <h2>{keyword}</h2>
             <h2>
-              Date: {""}
-              {format(date.startDate, "MM-dd-yyyy")} to{" "}
-              {format(date.endDate, "MM-dd-yyyy")}
+              Date: &nbsp;
+              <span className={date}>
+                {formatDate(date.startDate, "MM-dd-yyyy")} to &nbsp;
+                {formatDate(date.endDate, "MM-dd-yyyy")}
+              </span>
             </h2>
             {/* will have an && for conditional rendering */}
             <h2>Sorted By: {selectedOptions}</h2>
@@ -49,6 +52,10 @@ export default function SearchResults() {
       <div className={styles.mainView}>
         <div className={styles.view}>
           <div className={styles.activeResult}>
+            <div className={styles.activeResultController}>
+              <button className={styles.buttonprev}>Prev</button>
+              <button className={styles.buttonnext}>Next</button>
+            </div>
             <div className={styles.imageContainer}>
               <img src='' className={styles.activeImage} />
             </div>
@@ -89,8 +96,13 @@ export default function SearchResults() {
               </p>
             </div> */}
           </div>
-
           <div className={styles.resultsFeed}>
+            <input
+              type='text'
+              placeholder='Filter by keyword'
+              className={styles.filterinput}
+            ></input>
+
             <ul className={styles.resultsList}>
               {resultData.map((headline) => (
                 <ResultListItem {...headline} />
@@ -110,6 +122,7 @@ export default function SearchResults() {
 // when you press on a news article then it should trigger an onClick function which then setTheState to the current selection
 // Further updating the view
 
-// As a paid feature, then you get the next and prev buttons at the top that make it easy t cycek through articles recently selected
-
 // in the context there will be seaprate url, data, and keyword, date, options state variable to be modifed and shared between components
+
+// state for the input / keyword - filtering the articles
+//state for the filtered articles - to display only the filtered articles instead of entirety of search results  only

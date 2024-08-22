@@ -4,12 +4,11 @@
   box-sizing: border-box;
   padding: 1rem;
   position: relative;
-  overflow: scroll;
 }
 
 .mainHeader {
   min-width: 100%;
-  height: 5%;
+  height: 3rem;
   display: flex;
   justify-content: space-between;
   position: relative;
@@ -193,7 +192,7 @@
   display: flex;
   justify-content: space-between;
   position: relative;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
 }
 
 .articleKeyword {
@@ -268,6 +267,7 @@
   width: 100%;
   height: 100%;
   overflow: scroll;
+  background-color: grey;
 }
 
 /* .articleCardDescription {
@@ -296,8 +296,8 @@
 
 .articleSourceName {
   width: 100%;
-  height: auto;
-  text-overflow: hidden;
+  height: 50%;
+  background-color: gray;
 }
 
 .articleSourceDate {
@@ -430,12 +430,13 @@
   color: var(--homepage-tertiary);
 }
 
-.latestContainer {
+.latest {
   width: 100%;
   min-width: 375px;
   height: 100%;
-  overflow: scroll;
+  box-sizing: border-box;
   padding: 1rem;
+  position: relative;
 }
 .latestNewsFeed {
   width: 100%;
@@ -445,13 +446,12 @@
 }
 .latestNewsHeader {
   width: 100%;
-  height: 5%;
+  height: 3rem;
   display: flex;
   justify-content: space-between;
   position: relative;
-  border-bottom: 1px solid rgb(255, 255, 255, 0.675);
   color: white;
-  padding-bottom: 0.5rem;
+  margin-bottom: 0.5rem;
   z-index: 1;
 }
 
@@ -502,12 +502,13 @@
 
 .latestHeadline:hover {
   cursor: pointer;
-  background-color: white;
-  color: black;
+  background-color: black;
+  color: white;
 }
 .latestCardDetails {
   width: 65%;
   height: 100%;
+  background-color: grey;
 }
 
 .latestCardTitle {
@@ -544,9 +545,10 @@
 
 .latestSourceName {
   width: 100%;
-  height: auto;
+  height: 50%;
   text-wrap: nowrap;
   text-overflow: ellipsis;
+  background-color: grey;
 }
 
 .latestSourceDate {

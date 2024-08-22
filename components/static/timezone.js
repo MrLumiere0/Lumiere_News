@@ -2,9 +2,9 @@ import React, { useEffect } from "react";
 import { useState } from "react";
 
 export default function TimeZone() {
-  const [NY, setNY] = useState(null);
-  const [London, SetLondon] = useState(null);
-  const [Tokyo, setTokyo] = useState(null);
+  const [NY, setNY] = useState("Awaiting time..");
+  const [London, SetLondon] = useState("Awaiting time..");
+  const [Tokyo, setTokyo] = useState("Awaiting time..");
 
   const url_NY = "http://worldtimeapi.org/api/timezone/America/New_York";
   const url_London = "http://worldtimeapi.org/api/timezone/Europe/London";
@@ -85,17 +85,17 @@ export default function TimeZone() {
   return (
     <div className='timezone-main'>
       <div className='time-zones'>
-        <h2 id='timezone'>New York</h2>
+        <h2 id='timezone'>NY</h2>
         <h2 id='NY-timezone-time'>{NY}</h2>
       </div>
 
       <div className='time-zones'>
-        <h2 id='timezone'>London</h2>
+        <h2 id='timezone'>LON</h2>
         <h2 id='NY-timezone-time'>{London}</h2>
       </div>
 
       <div className='time-zones'>
-        <h2 id='timezone'>Tokyo</h2>
+        <h2 id='timezone'>TKYO</h2>
         <h2 id='NY-timezone-time'>{Tokyo}</h2>
       </div>
     </div>

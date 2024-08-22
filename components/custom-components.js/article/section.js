@@ -7,11 +7,6 @@ export default function Article() {
     "    https://newsapi.org/v2/top-headlines?country=us&category=technology&pageSize=100&apiKey=4db170d9535f4dccad0bbd35c58dc6b9"
   );
   const [sectNews, setSectNews] = useState([]);
-  // const filterRemoved = (element) => {
-  //   // if (element.content == "[Removed]") {
-  //   //   // .splice(element);
-  //   //   console.log(element);
-  //   }
 
   function filterRemoved(value, arr) {
     if (element.content == "[Removed]") {
@@ -25,20 +20,22 @@ export default function Article() {
   //
   useEffect(() => {
     const fetchSecNews = async () => {
+      let filteredArray = [];
+
       try {
         // set back to searchURL instead of url when done w modal
         const response = await fetch(searchURL);
         const data = await response.json();
         setSectNews(data.articles);
-        // sectNews.filter();
-        console.log(sectNews);
+        sectNews.filter((element) => {
+          if (!(element.content == "[Removed]")) {
+            filteredArray.push(element);
+            return setSectNews(filteredArray);
+          }
+        });
       } catch (err) {
         console.log("error");
       }
-
-      // do {
-
-      // } while (sectNews);
     };
 
     fetchSecNews();

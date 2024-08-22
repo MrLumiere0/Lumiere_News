@@ -4,6 +4,7 @@ import { useRouter } from "next/router";
 import styles from "../styles/sign-up.module.css";
 import { sideBarFontLogo } from "../styles/utils/font";
 import formValidationSignUp from "../components/static/logic/logic";
+import Link from "next/link";
 // import { auth } from "../config/firebase.js";
 
 export default function SignIn() {
@@ -42,7 +43,7 @@ export default function SignIn() {
         </div>
         <div className={styles.signUpSection}>
           <h2 id={styles.signUpHeader} className={sideBarFontLogo.className}>
-            CREATE MY ACCOUNT
+            CREATE ACCOUNT
           </h2>
           <form className={styles.signUpForm} onSubmit={userLogin}>
             <input
@@ -104,6 +105,9 @@ export default function SignIn() {
               Enter
             </button>
           </form>
+          <Link className={styles.redirectsignin} href='/sign-in'>
+            <span>Have an account?</span>
+          </Link>
         </div>
       </div>
     </div>

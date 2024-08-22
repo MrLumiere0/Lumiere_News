@@ -16,7 +16,7 @@
   margin: auto;
   display: flex;
   flex-direction: row;
-  background-color: black;
+  background-color: #717171;
   border-radius: 5px;
 }
 
@@ -81,4 +81,9 @@
   border-radius: 9px;
   cursor: pointer;
   background-color: #0781fe;
+}
+
+.redirectsignup {
+  text-decoration: none;
+  color: white;
 }

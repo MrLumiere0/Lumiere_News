@@ -15,12 +15,13 @@ export default function Home() {
       />
       <div className={styles.banner}>
         <h2 id={styles.Lumiere} className={sideBarFontLogo.className}>
-          Lumiere News
+          Lumiere Trading
         </h2>
 
         <h3 id={styles.bannerSubheading} /*className={bannerFont.className}*/>
-          What&apos;s happening
-          <span className={styles.bannerSubheadingToday}> today?</span>
+          {/* What&apos;s happening */}
+          Where trading meets
+          <span className={styles.bannerSubheadingToday}> Consistency</span>
         </h3>
       </div>
     </div>
