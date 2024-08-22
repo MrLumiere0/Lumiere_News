@@ -7,19 +7,18 @@ export default function Article() {
     "    https://newsapi.org/v2/top-headlines?country=us&category=technology&pageSize=100&apiKey=4db170d9535f4dccad0bbd35c58dc6b9"
   );
   const [sectNews, setSectNews] = useState([]);
-  const filterRemoved = (element) => {
-    // if (element.content == "[Removed]") {
-    //   // .splice(element);
-    //   console.log(element);
-    // }
+  // const filterRemoved = (element) => {
+  //   // if (element.content == "[Removed]") {
+  //   //   // .splice(element);
+  //   //   console.log(element);
+  //   }
 
-    function filterRemoved(value, arr) {
-      if (element.content == "[Removed]") {
-        arr.splice(element);
-        console.log(element);
-
-      }
-  };
+  function filterRemoved(value, arr) {
+    if (element.content == "[Removed]") {
+      arr.splice(element);
+      console.log(element);
+    }
+  }
 
   const url = { searchURL };
   //     "https://newsapi.org/v2/everything?q=stock%market&apiKey=4db170d9535f4dccad0bbd35c58dc6b9";
